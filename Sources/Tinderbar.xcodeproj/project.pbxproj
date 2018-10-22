@@ -12,6 +12,9 @@
 		464264F4217E3FCD0001C4AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Main.storyboard */; };
 		464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464264F5217E3FCF0001C4AF /* Assets.xcassets */; };
 		464264F9217E3FCF0001C4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */; };
+		46426504217E40B00001C4AF /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426501217E40B00001C4AF /* Pageboy.framework */; };
+		46426505217E40B00001C4AF /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426502217E40B00001C4AF /* AutoInsetter.framework */; };
+		46426506217E40B00001C4AF /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426503217E40B00001C4AF /* Tabman.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		464264F5217E3FCF0001C4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		464264F8217E3FCF0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		464264FA217E3FCF0001C4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46426501217E40B00001C4AF /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
+		46426502217E40B00001C4AF /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
+		46426503217E40B00001C4AF /* Tabman.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tabman.framework; path = ../Carthage/Build/iOS/Tabman.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46426504217E40B00001C4AF /* Pageboy.framework in Frameworks */,
+				46426505217E40B00001C4AF /* AutoInsetter.framework in Frameworks */,
+				46426506217E40B00001C4AF /* Tabman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				464264ED217E3FCD0001C4AF /* Tinderbar */,
 				464264EC217E3FCD0001C4AF /* Products */,
+				46426500217E40B00001C4AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +74,16 @@
 			path = Tinderbar;
 			sourceTree = "<group>";
 		};
+		46426500217E40B00001C4AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46426502217E40B00001C4AF /* AutoInsetter.framework */,
+				46426501217E40B00001C4AF /* Pageboy.framework */,
+				46426503217E40B00001C4AF /* Tabman.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +94,7 @@
 				464264E7217E3FCD0001C4AF /* Sources */,
 				464264E8217E3FCD0001C4AF /* Frameworks */,
 				464264E9217E3FCD0001C4AF /* Resources */,
+				46426507217E40B70001C4AF /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +150,33 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46426507217E40B70001C4AF /* Copy Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Tabman.framework",
+			);
+			name = "Copy Carthage Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pageboy.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoInsetter.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Tabman.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		464264E7217E3FCD0001C4AF /* Sources */ = {
@@ -283,6 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS;
 				INFOPLIST_FILE = Tinderbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS;
 				INFOPLIST_FILE = Tinderbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
