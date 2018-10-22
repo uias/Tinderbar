@@ -7,27 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4612CD4D217E439400C1B4F7 /* RootTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD4C217E439400C1B4F7 /* RootTabViewController.swift */; };
+		4612CD51217E5BF500C1B4F7 /* TinderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD50217E5BF500C1B4F7 /* TinderBar.swift */; };
+		4612CD53217E5C0400C1B4F7 /* TinderBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */; };
 		464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264EE217E3FCD0001C4AF /* AppDelegate.swift */; };
-		464264F1217E3FCD0001C4AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264F0217E3FCD0001C4AF /* ViewController.swift */; };
-		464264F4217E3FCD0001C4AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Main.storyboard */; };
+		464264F4217E3FCD0001C4AF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Root.storyboard */; };
 		464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464264F5217E3FCF0001C4AF /* Assets.xcassets */; };
 		464264F9217E3FCF0001C4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */; };
 		46426504217E40B00001C4AF /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426501217E40B00001C4AF /* Pageboy.framework */; };
 		46426505217E40B00001C4AF /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426502217E40B00001C4AF /* AutoInsetter.framework */; };
 		46426506217E40B00001C4AF /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426503217E40B00001C4AF /* Tabman.framework */; };
+		46426509217E41E10001C4AF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46426508217E41E10001C4AF /* MessagesViewController.swift */; };
+		4642650E217E42270001C4AF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642650D217E42270001C4AF /* ProfileViewController.swift */; };
+		46426510217E42A60001C4AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4642650F217E42A60001C4AF /* Profile.storyboard */; };
+		46426512217E42BA0001C4AF /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46426511217E42BA0001C4AF /* Messages.storyboard */; };
+		46426515217E42F20001C4AF /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46426514217E42F20001C4AF /* MatchesViewController.swift */; };
+		46426517217E43040001C4AF /* Matches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46426516217E43040001C4AF /* Matches.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4612CD4C217E439400C1B4F7 /* RootTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabViewController.swift; sourceTree = "<group>"; };
+		4612CD50217E5BF500C1B4F7 /* TinderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBar.swift; sourceTree = "<group>"; };
+		4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBarLayout.swift; sourceTree = "<group>"; };
 		464264EB217E3FCD0001C4AF /* Tinderbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinderbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464264EE217E3FCD0001C4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		464264F0217E3FCD0001C4AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		464264F3217E3FCD0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		464264F3217E3FCD0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
 		464264F5217E3FCF0001C4AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		464264F8217E3FCF0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		464264FA217E3FCF0001C4AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46426501217E40B00001C4AF /* Pageboy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pageboy.framework; path = ../Carthage/Build/iOS/Pageboy.framework; sourceTree = "<group>"; };
 		46426502217E40B00001C4AF /* AutoInsetter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoInsetter.framework; path = ../Carthage/Build/iOS/AutoInsetter.framework; sourceTree = "<group>"; };
 		46426503217E40B00001C4AF /* Tabman.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Tabman.framework; path = ../Carthage/Build/iOS/Tabman.framework; sourceTree = "<group>"; };
+		46426508217E41E10001C4AF /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		4642650D217E42270001C4AF /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4642650F217E42A60001C4AF /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		46426511217E42BA0001C4AF /* Messages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Messages.storyboard; sourceTree = "<group>"; };
+		46426514217E42F20001C4AF /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		46426516217E43040001C4AF /* Matches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matches.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +60,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4612CD4E217E43C600C1B4F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				464264F5217E3FCF0001C4AF /* Assets.xcassets */,
+				464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */,
+				464264FA217E3FCF0001C4AF /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4612CD4F217E5BE600C1B4F7 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				4612CD50217E5BF500C1B4F7 /* TinderBar.swift */,
+				4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */,
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
 		464264E2217E3FCD0001C4AF = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +100,11 @@
 			isa = PBXGroup;
 			children = (
 				464264EE217E3FCD0001C4AF /* AppDelegate.swift */,
-				464264F0217E3FCD0001C4AF /* ViewController.swift */,
-				464264F2217E3FCD0001C4AF /* Main.storyboard */,
-				464264F5217E3FCF0001C4AF /* Assets.xcassets */,
-				464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */,
-				464264FA217E3FCF0001C4AF /* Info.plist */,
+				464264F2217E3FCD0001C4AF /* Root.storyboard */,
+				4612CD4C217E439400C1B4F7 /* RootTabViewController.swift */,
+				4612CD4F217E5BE600C1B4F7 /* Bar */,
+				4642650A217E41F30001C4AF /* ViewControllers */,
+				4612CD4E217E43C600C1B4F7 /* Resources */,
 			);
 			path = Tinderbar;
 			sourceTree = "<group>";
@@ -82,6 +117,43 @@
 				46426503217E40B00001C4AF /* Tabman.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4642650A217E41F30001C4AF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4642650C217E42110001C4AF /* Profile */,
+				46426513217E42DB0001C4AF /* Matches */,
+				4642650B217E41FC0001C4AF /* Messages */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4642650B217E41FC0001C4AF /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				46426511217E42BA0001C4AF /* Messages.storyboard */,
+				46426508217E41E10001C4AF /* MessagesViewController.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		4642650C217E42110001C4AF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4642650F217E42A60001C4AF /* Profile.storyboard */,
+				4642650D217E42270001C4AF /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		46426513217E42DB0001C4AF /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				46426516217E43040001C4AF /* Matches.storyboard */,
+				46426514217E42F20001C4AF /* MatchesViewController.swift */,
+			);
+			path = Matches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +217,10 @@
 			files = (
 				464264F9217E3FCF0001C4AF /* LaunchScreen.storyboard in Resources */,
 				464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */,
-				464264F4217E3FCD0001C4AF /* Main.storyboard in Resources */,
+				46426517217E43040001C4AF /* Matches.storyboard in Resources */,
+				46426510217E42A60001C4AF /* Profile.storyboard in Resources */,
+				46426512217E42BA0001C4AF /* Messages.storyboard in Resources */,
+				464264F4217E3FCD0001C4AF /* Root.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,20 +258,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464264F1217E3FCD0001C4AF /* ViewController.swift in Sources */,
+				4642650E217E42270001C4AF /* ProfileViewController.swift in Sources */,
+				46426509217E41E10001C4AF /* MessagesViewController.swift in Sources */,
+				4612CD53217E5C0400C1B4F7 /* TinderBarLayout.swift in Sources */,
+				46426515217E42F20001C4AF /* MatchesViewController.swift in Sources */,
+				4612CD51217E5BF500C1B4F7 /* TinderBar.swift in Sources */,
 				464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */,
+				4612CD4D217E439400C1B4F7 /* RootTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		464264F2217E3FCD0001C4AF /* Main.storyboard */ = {
+		464264F2217E3FCD0001C4AF /* Root.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				464264F3217E3FCD0001C4AF /* Base */,
 			);
-			name = Main.storyboard;
+			name = Root.storyboard;
 			sourceTree = "<group>";
 		};
 		464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */ = {
@@ -340,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tinderbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -358,7 +438,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Tinderbar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
