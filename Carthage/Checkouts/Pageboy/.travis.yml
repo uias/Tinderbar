@@ -1,0 +1,10 @@
+language: objective-c
+osx_image: xcode10
+before_install:
+- bundle install
+script: 
+- .travis/build.sh
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+notifications:
+  email: false
