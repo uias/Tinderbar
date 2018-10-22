@@ -16,19 +16,23 @@ class TinderBarLayout: TMBarLayout {
     
     override func layout(in view: UIView) {
         
-        view.addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        let paddedStackView = UIStackView()
+        view.addSubview(paddedStackView)
+        paddedStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            paddedStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            paddedStackView.topAnchor.constraint(equalTo: view.topAnchor),
+            paddedStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            paddedStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
+        
+        addPaddingView(multiplier: 0.25, to: paddedStackView)
+        paddedStackView.addArrangedSubview(stackView)
+        addPaddingView(multiplier: 0.25, to: paddedStackView)
     }
     
     override func insert(buttons: [TMBarButton], at index: Int) {
         
-        addPaddingView(multiplier: 0.25)
         for button in buttons {
             
             let container = UIView()
@@ -50,7 +54,6 @@ class TinderBarLayout: TMBarLayout {
                 button.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor)
                 ])
         }
-        addPaddingView(multiplier: 0.25)
     }
     
     override func remove(buttons: [TMBarButton]) {
@@ -58,18 +61,60 @@ class TinderBarLayout: TMBarLayout {
     }
     
     override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
-        return .zero
+        let range = buttonIndexRange(from: position, minimum: 0, maximum: capacity - 1)
+        guard stackView.arrangedSubviews.count > range.upperBound else {
+            return .zero
+        }
+        
+        let lowerView = stackView.arrangedSubviews[range.lowerBound]
+        let upperView = stackView.arrangedSubviews[range.upperBound]
+        
+        let lowerViewFrame = view.convert(lowerView.frame, from: stackView)
+        let upperViewFrame = view.convert(upperView.frame, from: stackView)
+        
+        let interpolation = interpolatedRect(between: lowerViewFrame,
+                                             and: upperViewFrame,
+                                             position: position)
+        
+        return CGRect(x: lowerViewFrame.origin.x + interpolation.origin.x,
+                      y: 0.0,
+                      width: lowerViewFrame.size.width + interpolation.size.width,
+                      height: view.bounds.size.height)
     }
     
     // MARK: Utility
     
     @discardableResult
-    private func addPaddingView(multiplier: CGFloat) -> UIView {
+    private func addPaddingView(multiplier: CGFloat, to stack: UIStackView) -> UIView {
         let view = UIView()
         view.isUserInteractionEnabled = false
-        stackView.addArrangedSubview(view)
+        stack.addArrangedSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: multiplier).isActive = true
         return view
+    }
+    
+    // MARK: Maths
+    
+    private func buttonIndexRange(from position: CGFloat, minimum: Int, maximum: Int) -> Range<Int> {
+        guard maximum > minimum else {
+            return 0 ..< 0
+        }
+        let lower = floor(position)
+        let upper = ceil(position)
+        let minimum = CGFloat(minimum)
+        let maximum = CGFloat(maximum)
+        
+        return Int(max(minimum, min(maximum, lower))) ..< Int(min(maximum, max(minimum, upper)))
+    }
+    
+    private func interpolatedRect(between frame: CGRect, and other: CGRect, position: CGFloat) -> CGRect {
+        var integral: Float = 0.0
+        let progress = CGFloat(modff(Float(position), &integral))
+        
+        return CGRect(x: (other.origin.x - frame.origin.x) * progress,
+                      y: (other.origin.y - frame.origin.y) * progress,
+                      width: (other.size.width - frame.size.width) * progress,
+                      height: (other.size.height - frame.size.height) * progress)
     }
 }
