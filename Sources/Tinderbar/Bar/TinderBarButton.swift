@@ -22,6 +22,17 @@ class TinderBarButton: TMBarButton {
     
     private let imageView = UIImageView()
     
+    override var tintColor: UIColor! {
+        didSet {
+            update(for: self.selectionState)
+        }
+    }
+    var unselectedTintColor: UIColor = .lightGray {
+        didSet {
+            update(for: self.selectionState)
+        }
+    }
+    
     // MARK: Lifecycle
     
     override func layout(in view: UIView) {
@@ -46,6 +57,9 @@ class TinderBarButton: TMBarButton {
     }
     
     override func update(for selectionState: TMBarButton.SelectionState) {
+        
+        imageView.tintColor = unselectedTintColor.interpolate(with: tintColor,
+                                                              percent: selectionState.rawValue)
         
         let scale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.unselectedScale))
         imageView.transform = CGAffineTransform(scaleX: scale, y: scale)

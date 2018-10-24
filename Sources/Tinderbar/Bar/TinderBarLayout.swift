@@ -35,10 +35,13 @@ class TinderBarLayout: TMBarLayout {
             paddedStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
         
+        // Add two padding views to the leading/trailing edge of the main content stack view.
+        // These views are 0.25 times the width of the content layout guide (1/4 of the view width).
         addPaddingView(multiplier: 0.25, to: paddedStackView)
         paddedStackView.addArrangedSubview(stackView)
         addPaddingView(multiplier: 0.25, to: paddedStackView)
         
+        // Apply a default content inset.
         contentInset = Defaults.contentInset
     }
     
@@ -50,6 +53,7 @@ class TinderBarLayout: TMBarLayout {
             stackView.addArrangedSubview(container)
             containers.append(container)
             
+            // Make button containers 1/2 the width of the layout guide (view width).
             container.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 0.5).isActive = true
         }
     }
@@ -70,10 +74,16 @@ class TinderBarLayout: TMBarLayout {
         let lowerViewFrame = view.convert(lowerView.frame, from: stackView)
         let upperViewFrame = view.convert(upperView.frame, from: stackView)
         
+        // Create an interpolated rect between the view that is detected as 'lower' (leading)
+        // and the view that is 'upper' (trailing) for the current position.
         let interpolation = interpolatedRect(between: lowerViewFrame,
                                              and: upperViewFrame,
                                              position: position)
         
+        // Update the offsets in the container.
+        // This adjusts the 'center x' constraint of the button in the container, so that it is offsetted
+        // correctly. Results in -1.0 when offsetted to the left, 0.0 when focussed and 1.0 when offsetted to the right.
+        // This is then interpreted for the button width and increments/decrements the constraint constant appropriately.
         updateContainerOffsets(for: position)
         
         return CGRect(x: lowerViewFrame.origin.x + interpolation.origin.x,

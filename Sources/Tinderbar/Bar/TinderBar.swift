@@ -8,4 +8,21 @@
 
 import Tabman
 
-typealias TinderBar = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>
+class TinderBar {
+    
+    static func make() -> TMBar {
+        let bar = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>()
+        
+        bar.isScrollEnabled = false
+        
+        bar.buttons.customize { (button) in
+            button.tintColor = TinderColors.primaryTint
+            button.unselectedTintColor = TinderColors.unselectedGray
+        }
+        
+        // Wrap in a 'navigation bar'.
+        let navigationBar = TMSystemBar(for: bar)
+        navigationBar.backgroundStyle = .flat(color: .white)
+        return navigationBar
+    }
+}

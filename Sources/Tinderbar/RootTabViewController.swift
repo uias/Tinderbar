@@ -28,7 +28,7 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
         
         self.dataSource = self
         
-        addBar(TMSystemBar(for: TinderBar()), dataSource: self, at: .top)
+        addBar(TinderBar.make(), dataSource: self, at: .top)
     }
     
     // MARK: PageboyViewControllerDataSource
@@ -42,7 +42,7 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 1)
     }
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
