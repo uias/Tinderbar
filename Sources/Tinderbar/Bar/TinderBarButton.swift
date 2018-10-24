@@ -14,7 +14,7 @@ class TinderBarButton: TMBarButton {
     // MARK: Defaults
     
     private struct Defaults {
-        static let imageSize = CGSize(width: 40, height: 40)
+        static let imageSize = CGSize(width: 36, height: 36)
     }
     
     // MARK: Properties

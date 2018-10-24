@@ -10,6 +10,14 @@ import Tabman
 
 class TinderBarLayout: TMBarLayout {
     
+    // MARK: Defaults
+    
+    private struct Defaults {
+        static let contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 10, right: 0)
+    }
+    
+    // MARK: Properties
+    
     private let stackView = UIStackView()
     private var containers = [TinderBarButtonContainer]()
     
@@ -30,6 +38,8 @@ class TinderBarLayout: TMBarLayout {
         addPaddingView(multiplier: 0.25, to: paddedStackView)
         paddedStackView.addArrangedSubview(stackView)
         addPaddingView(multiplier: 0.25, to: paddedStackView)
+        
+        contentInset = Defaults.contentInset
     }
     
     override func insert(buttons: [TMBarButton], at index: Int) {
