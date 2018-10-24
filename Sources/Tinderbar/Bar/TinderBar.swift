@@ -8,4 +8,4 @@
 
 import Tabman
 
-typealias TinderBar = TMBarView<TinderBarLayout, TMLabelBarButton, TMBarIndicator.None>
+typealias TinderBar = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>

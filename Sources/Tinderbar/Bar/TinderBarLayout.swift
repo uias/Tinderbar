@@ -42,8 +42,6 @@ class TinderBarLayout: TMBarLayout {
             container.translatesAutoresizingMaskIntoConstraints = false
             container.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 0.5).isActive = true
             
-            container.backgroundColor = .red
-            
             button.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 button.centerXAnchor.constraint(equalTo: container.centerXAnchor),
@@ -51,7 +49,7 @@ class TinderBarLayout: TMBarLayout {
                 button.topAnchor.constraint(equalTo: container.topAnchor),
                 button.bottomAnchor.constraint(equalTo: container.bottomAnchor),
                 button.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor),
-                button.trailingAnchor.constraint(greaterThanOrEqualTo: container.trailingAnchor)
+                container.trailingAnchor.constraint(greaterThanOrEqualTo: button.trailingAnchor)
                 ])
         }
     }

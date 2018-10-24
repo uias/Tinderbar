@@ -12,7 +12,7 @@ import Pageboy
 
 class RootTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
-    enum Tab: CaseIterable {
+    enum Tab: String, CaseIterable {
         case profile
         case matches
         case messages
@@ -59,18 +59,11 @@ private class BarItem: TMBarItemable {
     }
     
     var title: String? {
-        switch tab {
-        case .profile:
-            return "Profile"
-        case .matches:
-            return "Matches"
-        case .messages:
-            return "Messages"
-        }
+        return tab.rawValue.capitalized
     }
     
     var image: UIImage? {
-        return nil
+        return UIImage(named: "ic_\(tab.rawValue)")
     }
     
     func makeViewController() -> UIViewController? {
