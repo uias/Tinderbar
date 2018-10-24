@@ -35,22 +35,10 @@ class TinderBarLayout: TMBarLayout {
         
         for button in buttons {
             
-            let container = UIView()
+            let container = TinderBarButtonContainer(for: button)
             stackView.addArrangedSubview(container)
-            container.addSubview(button)
             
-            container.translatesAutoresizingMaskIntoConstraints = false
             container.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 0.5).isActive = true
-            
-            button.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: container.centerXAnchor),
-                button.centerYAnchor.constraint(equalTo: container.centerYAnchor),
-                button.topAnchor.constraint(equalTo: container.topAnchor),
-                button.bottomAnchor.constraint(equalTo: container.bottomAnchor),
-                button.leadingAnchor.constraint(greaterThanOrEqualTo: container.leadingAnchor),
-                container.trailingAnchor.constraint(greaterThanOrEqualTo: button.trailingAnchor)
-                ])
         }
     }
     

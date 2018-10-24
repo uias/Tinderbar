@@ -11,6 +11,7 @@
 		4612CD51217E5BF500C1B4F7 /* TinderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD50217E5BF500C1B4F7 /* TinderBar.swift */; };
 		4612CD53217E5C0400C1B4F7 /* TinderBarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */; };
 		4612CD632180E70B00C1B4F7 /* TinderBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD622180E70B00C1B4F7 /* TinderBarButton.swift */; };
+		4612CD652180EB7800C1B4F7 /* TinderBarButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */; };
 		464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264EE217E3FCD0001C4AF /* AppDelegate.swift */; };
 		464264F4217E3FCD0001C4AF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Root.storyboard */; };
 		464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464264F5217E3FCF0001C4AF /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		4612CD50217E5BF500C1B4F7 /* TinderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBar.swift; sourceTree = "<group>"; };
 		4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBarLayout.swift; sourceTree = "<group>"; };
 		4612CD622180E70B00C1B4F7 /* TinderBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBarButton.swift; sourceTree = "<group>"; };
+		4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBarButtonContainer.swift; sourceTree = "<group>"; };
 		464264EB217E3FCD0001C4AF /* Tinderbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinderbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464264EE217E3FCD0001C4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464264F3217E3FCD0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				4612CD50217E5BF500C1B4F7 /* TinderBar.swift */,
 				4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */,
+				4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */,
 				4612CD622180E70B00C1B4F7 /* TinderBarButton.swift */,
 			);
 			path = Bar;
@@ -268,6 +271,7 @@
 				4612CD51217E5BF500C1B4F7 /* TinderBar.swift in Sources */,
 				464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */,
 				4612CD4D217E439400C1B4F7 /* RootTabViewController.swift in Sources */,
+				4612CD652180EB7800C1B4F7 /* TinderBarButtonContainer.swift in Sources */,
 				4612CD632180E70B00C1B4F7 /* TinderBarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
