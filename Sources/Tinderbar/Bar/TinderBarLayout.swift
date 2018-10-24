@@ -11,6 +11,7 @@ import Tabman
 class TinderBarLayout: TMBarLayout {
     
     private let stackView = UIStackView()
+    private var containers = [TinderBarButtonContainer]()
     
     // MARK: Lifecycle
     
@@ -37,13 +38,14 @@ class TinderBarLayout: TMBarLayout {
             
             let container = TinderBarButtonContainer(for: button)
             stackView.addArrangedSubview(container)
+            containers.append(container)
             
             container.widthAnchor.constraint(equalTo: layoutGuide.widthAnchor, multiplier: 0.5).isActive = true
         }
     }
     
     override func remove(buttons: [TMBarButton]) {
-        
+        fatalError("TODO")
     }
     
     override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {
@@ -62,10 +64,20 @@ class TinderBarLayout: TMBarLayout {
                                              and: upperViewFrame,
                                              position: position)
         
+        updateContainerOffsets(for: position)
+        
         return CGRect(x: lowerViewFrame.origin.x + interpolation.origin.x,
                       y: 0.0,
                       width: lowerViewFrame.size.width + interpolation.size.width,
                       height: view.bounds.size.height)
+    }
+    
+    private func updateContainerOffsets(for position: CGFloat) {
+        for (index, container) in containers.enumerated() {
+            let index = CGFloat(index)
+            let positionDelta = max(-1.0, min(1.0, position - index))
+            container.offsetDelta = positionDelta
+        }
     }
     
     // MARK: Utility

@@ -13,11 +13,20 @@ class TinderBarButtonContainer: UIView {
     
     // MARK: Properties
     
+    private let button: TMBarButton
+    
     private var xAnchor: NSLayoutConstraint!
+    
+    var offsetDelta: CGFloat = 0.0 {
+        didSet {
+            xAnchor.constant = offsetDelta * (button.frame.size.width)
+        }
+    }
     
     // MARK: Init
     
     init(for button: TMBarButton) {
+        self.button = button
         super.init(frame: .zero)
         initialize(with: button)
     }
