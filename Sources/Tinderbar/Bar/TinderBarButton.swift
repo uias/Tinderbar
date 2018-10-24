@@ -15,6 +15,7 @@ class TinderBarButton: TMBarButton {
     
     private struct Defaults {
         static let imageSize = CGSize(width: 36, height: 36)
+        static let unselectedScale: CGFloat = 0.8
     }
     
     // MARK: Properties
@@ -46,5 +47,7 @@ class TinderBarButton: TMBarButton {
     
     override func update(for selectionState: TMBarButton.SelectionState) {
         
+        let scale = 1.0 - ((1.0 - selectionState.rawValue) * (1.0 - Defaults.unselectedScale))
+        imageView.transform = CGAffineTransform(scaleX: scale, y: scale)
     }
 }
