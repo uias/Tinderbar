@@ -14,6 +14,9 @@
 		4612CD652180EB7800C1B4F7 /* TinderBarButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */; };
 		4612CD672180FFE900C1B4F7 /* TinderColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD662180FFE900C1B4F7 /* TinderColors.swift */; };
 		4612CD6A218101EC00C1B4F7 /* UIColor+Interpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD69218101EC00C1B4F7 /* UIColor+Interpolation.swift */; };
+		4612CD6C2181058900C1B4F7 /* MessagesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD6B2181058900C1B4F7 /* MessagesTabViewController.swift */; };
+		4612CD6E218105AC00C1B4F7 /* MessagesFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD6D218105AC00C1B4F7 /* MessagesFeedViewController.swift */; };
+		4612CD70218106CF00C1B4F7 /* MessagesBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612CD6F218106CF00C1B4F7 /* MessagesBar.swift */; };
 		464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464264EE217E3FCD0001C4AF /* AppDelegate.swift */; };
 		464264F4217E3FCD0001C4AF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Root.storyboard */; };
 		464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464264F5217E3FCF0001C4AF /* Assets.xcassets */; };
@@ -37,6 +40,9 @@
 		4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderBarButtonContainer.swift; sourceTree = "<group>"; };
 		4612CD662180FFE900C1B4F7 /* TinderColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderColors.swift; sourceTree = "<group>"; };
 		4612CD69218101EC00C1B4F7 /* UIColor+Interpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Interpolation.swift"; sourceTree = "<group>"; };
+		4612CD6B2181058900C1B4F7 /* MessagesTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTabViewController.swift; sourceTree = "<group>"; };
+		4612CD6D218105AC00C1B4F7 /* MessagesFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesFeedViewController.swift; sourceTree = "<group>"; };
+		4612CD6F218106CF00C1B4F7 /* MessagesBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesBar.swift; sourceTree = "<group>"; };
 		464264EB217E3FCD0001C4AF /* Tinderbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tinderbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464264EE217E3FCD0001C4AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464264F3217E3FCD0001C4AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Root.storyboard; sourceTree = "<group>"; };
@@ -153,7 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				46426511217E42BA0001C4AF /* Messages.storyboard */,
+				4612CD6B2181058900C1B4F7 /* MessagesTabViewController.swift */,
+				4612CD6F218106CF00C1B4F7 /* MessagesBar.swift */,
 				46426508217E41E10001C4AF /* MessagesViewController.swift */,
+				4612CD6D218105AC00C1B4F7 /* MessagesFeedViewController.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -278,11 +287,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4612CD6C2181058900C1B4F7 /* MessagesTabViewController.swift in Sources */,
 				4642650E217E42270001C4AF /* ProfileViewController.swift in Sources */,
 				46426509217E41E10001C4AF /* MessagesViewController.swift in Sources */,
 				4612CD53217E5C0400C1B4F7 /* TinderBarLayout.swift in Sources */,
+				4612CD6E218105AC00C1B4F7 /* MessagesFeedViewController.swift in Sources */,
 				4612CD672180FFE900C1B4F7 /* TinderColors.swift in Sources */,
 				46426515217E42F20001C4AF /* MatchesViewController.swift in Sources */,
+				4612CD70218106CF00C1B4F7 /* MessagesBar.swift in Sources */,
 				4612CD51217E5BF500C1B4F7 /* TinderBar.swift in Sources */,
 				464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */,
 				4612CD4D217E439400C1B4F7 /* RootTabViewController.swift in Sources */,

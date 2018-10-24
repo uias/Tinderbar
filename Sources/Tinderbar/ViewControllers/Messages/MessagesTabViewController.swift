@@ -1,8 +1,8 @@
 //
-//  RootTabViewController.swift
+//  MessagesTabViewController.swift
 //  Tinderbar
 //
-//  Created by Merrick Sapsford on 22/10/2018.
+//  Created by Merrick Sapsford on 24/10/2018.
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
@@ -10,12 +10,11 @@ import UIKit
 import Tabman
 import Pageboy
 
-class RootTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
+class MessagesTabViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
     
     enum Tab: String, CaseIterable {
-        case profile
-        case matches
         case messages
+        case feed
     }
     
     private let tabItems = Tab.allCases.map({ BarItem(for: $0) })
@@ -28,7 +27,7 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
         
         self.dataSource = self
         
-        addBar(TinderBar.make(), dataSource: self, at: .top)
+        addBar(MessagesBar.make(), dataSource: self, at: .top)
     }
     
     // MARK: PageboyViewControllerDataSource
@@ -42,7 +41,7 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 1)
+        return nil
     }
     
     // MARK: TMBarDataSource
@@ -54,31 +53,29 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
 
 private class BarItem: TMBarItemable {
     
-    let tab: RootTabViewController.Tab
+    let tab: MessagesTabViewController.Tab
     
-    init(for tab: RootTabViewController.Tab) {
+    init(for tab: MessagesTabViewController.Tab) {
         self.tab = tab
     }
     
     var title: String? {
         return tab.rawValue.capitalized
     }
-    
     var image: UIImage? {
-        return UIImage(named: "ic_\(tab.rawValue)")
+        return nil
     }
     
     func makeViewController() -> UIViewController? {
-        let storyboardName: String
+        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+        let viewControllerId: String
         switch tab {
-        case .profile:
-            storyboardName = "Profile"
-        case .matches:
-            storyboardName = "Matches"
         case .messages:
-            storyboardName = "Messages"
+            viewControllerId = "MessagesViewController"
+        case .feed:
+            viewControllerId = "MessagesFeedViewController"
         }
         
-        return UIStoryboard(name: storyboardName, bundle: nil).instantiateInitialViewController()
+        return storyboard.instantiateViewController(withIdentifier: viewControllerId)
     }
 }
