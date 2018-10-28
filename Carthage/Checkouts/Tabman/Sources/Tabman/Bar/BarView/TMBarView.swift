@@ -29,12 +29,18 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         case snap
     }
     
+    public enum ScrollMode: Int {
+        case interactive
+        case swipe
+        case none
+    }
+    
     // MARK: Properties
     
     private let rootContentStack = UIStackView()
     
     private let scrollViewContainer = EdgeFadedView()
-    private let scrollView = UIScrollView()
+    private let scrollView = GestureScrollView()
     private var grid: TMBarViewGrid!
     
     private let scrollHandler: TMBarViewScrollHandler
@@ -118,12 +124,17 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     ///
     /// Defaults to `.progressive`.
     public var animationStyle: AnimationStyle = .progressive
-    /// Whether the bar contents should be allowed to be scrolled by the user.
-    public var isScrollEnabled: Bool {
+    /// The type of scrolling interaction to allow.
+    ///
+    /// Options:
+    /// - `.interactive`: The bar contents can be scrolled interactively.
+    /// - `.swipe`: The bar contents can be scrolled through with swipe gestures.
+    /// - `.none`: The bar contents can't be scrolled at all.
+    public var scrollMode: ScrollMode {
         set {
-            scrollView.isScrollEnabled = newValue
+            scrollView.scrollMode = GestureScrollView.ScrollMode(rawValue: newValue.rawValue)!
         } get {
-            return scrollView.isScrollEnabled
+            return ScrollMode(rawValue: scrollView.scrollMode.rawValue)!
         }
     }
     /// Whether to fade the leading and trailing edges of the bar content to an alpha of 0.
@@ -143,6 +154,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         
         buttons.interactionHandler = self
         scrollHandler.delegate = self
+        scrollView.gestureDelegate = self
         layout(in: self)
     }
     
@@ -478,5 +490,20 @@ extension TMBarView: TMBarViewScrollHandlerDelegate {
                               from scrollView: UIScrollView) {
         
         updateEdgeFades(for: scrollView)
+    }
+}
+
+extension TMBarView: GestureScrollViewGestureDelegate {
+    
+    func scrollView(_ scrollView: GestureScrollView, didReceiveSwipeTo direction: UISwipeGestureRecognizer.Direction) {
+        let index = Int(indicatedPosition ?? 0)
+        switch direction {
+        case .right, .down:
+            delegate?.bar(self, didRequestScrollTo: max(0, index - 1))
+        case .left, .up:
+            delegate?.bar(self, didRequestScrollTo: min(buttons.all.count - 1, index + 1))
+        default:
+            fatalError()
+        }
     }
 }

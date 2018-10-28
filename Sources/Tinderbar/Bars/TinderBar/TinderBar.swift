@@ -15,7 +15,7 @@ class TinderBar {
     static func make() -> TMBar {
         let bar = BarType()
         
-        bar.isScrollEnabled = false
+        bar.scrollMode = .swipe
         
         bar.buttons.customize { (button) in
             button.tintColor = TinderColors.primaryTint
