@@ -32,6 +32,8 @@
 		46426517217E43040001C4AF /* Matches.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46426516217E43040001C4AF /* Matches.storyboard */; };
 		46D36A4D218614CC0013635D /* MessagesMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D36A4C218614CC0013635D /* MessagesMessageCell.swift */; };
 		46D36A4F218614D40013635D /* MessagesMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D36A4E218614D40013635D /* MessagesMessageCell.xib */; };
+		46D36A51218617ED0013635D /* MessagesFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D36A50218617ED0013635D /* MessagesFeedCell.swift */; };
+		46D36A53218617F60013635D /* MessagesFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D36A52218617F60013635D /* MessagesFeedCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		46426516217E43040001C4AF /* Matches.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Matches.storyboard; sourceTree = "<group>"; };
 		46D36A4C218614CC0013635D /* MessagesMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesMessageCell.swift; sourceTree = "<group>"; };
 		46D36A4E218614D40013635D /* MessagesMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesMessageCell.xib; sourceTree = "<group>"; };
+		46D36A50218617ED0013635D /* MessagesFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesFeedCell.swift; sourceTree = "<group>"; };
+		46D36A52218617F60013635D /* MessagesFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesFeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,8 @@
 			children = (
 				46D36A4C218614CC0013635D /* MessagesMessageCell.swift */,
 				46D36A4E218614D40013635D /* MessagesMessageCell.xib */,
+				46D36A50218617ED0013635D /* MessagesFeedCell.swift */,
+				46D36A52218617F60013635D /* MessagesFeedCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464264F9217E3FCF0001C4AF /* LaunchScreen.storyboard in Resources */,
+				46D36A53218617F60013635D /* MessagesFeedCell.xib in Resources */,
 				464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */,
 				46426517217E43040001C4AF /* Matches.storyboard in Resources */,
 				46426510217E42A60001C4AF /* Profile.storyboard in Resources */,
@@ -315,6 +322,7 @@
 				464264EF217E3FCD0001C4AF /* AppDelegate.swift in Sources */,
 				4612CD4D217E439400C1B4F7 /* RootTabViewController.swift in Sources */,
 				4612CD652180EB7800C1B4F7 /* TinderBarButtonContainer.swift in Sources */,
+				46D36A51218617ED0013635D /* MessagesFeedCell.swift in Sources */,
 				4612CD6A218101EC00C1B4F7 /* UIColor+Interpolation.swift in Sources */,
 				4612CD632180E70B00C1B4F7 /* TinderBarButton.swift in Sources */,
 			);
