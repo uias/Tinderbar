@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xRY-zg-ymV">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,23 +14,137 @@
             <objects>
                 <viewController id="xRY-zg-ymV" customClass="MatchesViewController" customModule="Tinderbar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9lF-gd-loi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH8-bd-Xvs">
-                                <rect key="frame" x="154.5" y="323" width="66" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHl-nh-vCU">
+                                <rect key="frame" x="0.0" y="678" width="375" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IVK-b7-EVe">
+                                        <rect key="frame" x="16" y="0.0" width="343" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1Z-ea-GrX" userLabel="Container">
+                                                <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUW-9J-WzD" customClass="MatchesActionButton" customModule="Tinderbar" customModuleProvider="target">
+                                                        <rect key="frame" x="12.333333333333329" y="28" width="44" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="44" id="5c6-k1-YHM"/>
+                                                            <constraint firstAttribute="height" constant="44" id="idD-xp-09z"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="EUW-9J-WzD" firstAttribute="centerY" secondItem="k1Z-ea-GrX" secondAttribute="centerY" id="Ld5-m5-K0s"/>
+                                                    <constraint firstItem="EUW-9J-WzD" firstAttribute="centerX" secondItem="k1Z-ea-GrX" secondAttribute="centerX" id="cgG-Q8-MmI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sp-O7-CMy" userLabel="Container">
+                                                <rect key="frame" x="68.666666666666657" y="0.0" width="68.666666666666657" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ro-CA-l68" customClass="MatchesActionButton" customModule="Tinderbar" customModuleProvider="target">
+                                                        <rect key="frame" x="4.3333333333333286" y="20" width="60" height="60"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="7GH-hq-SGh"/>
+                                                            <constraint firstAttribute="width" constant="60" id="yIv-nx-qMK"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="7ro-CA-l68" firstAttribute="centerY" secondItem="3sp-O7-CMy" secondAttribute="centerY" id="MuL-vu-GuW"/>
+                                                    <constraint firstItem="7ro-CA-l68" firstAttribute="centerX" secondItem="3sp-O7-CMy" secondAttribute="centerX" id="f5X-qP-tB5"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0W-6C-PSX" userLabel="Container">
+                                                <rect key="frame" x="137.33333333333334" y="0.0" width="68.333333333333343" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwr-Qr-Pj5" customClass="MatchesActionButton" customModule="Tinderbar" customModuleProvider="target">
+                                                        <rect key="frame" x="12.333333333333314" y="28" width="44" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="IRz-CI-6bI"/>
+                                                            <constraint firstAttribute="width" constant="44" id="jfk-16-gNo"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Iwr-Qr-Pj5" firstAttribute="centerX" secondItem="M0W-6C-PSX" secondAttribute="centerX" id="iv5-74-QU4"/>
+                                                    <constraint firstItem="Iwr-Qr-Pj5" firstAttribute="centerY" secondItem="M0W-6C-PSX" secondAttribute="centerY" id="se6-BF-gfu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-OO-hFz" userLabel="Container">
+                                                <rect key="frame" x="205.66666666666666" y="0.0" width="68.666666666666657" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-Yo-wk9" customClass="MatchesActionButton" customModule="Tinderbar" customModuleProvider="target">
+                                                        <rect key="frame" x="4.3333333333333428" y="20" width="60" height="60"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="8zg-Cd-J5y"/>
+                                                            <constraint firstAttribute="width" constant="60" id="QDQ-qd-9zl"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ViX-Yo-wk9" firstAttribute="centerY" secondItem="w4o-OO-hFz" secondAttribute="centerY" id="bme-1T-tof"/>
+                                                    <constraint firstItem="ViX-Yo-wk9" firstAttribute="centerX" secondItem="w4o-OO-hFz" secondAttribute="centerX" id="lk3-td-5jY"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5e-Um-iVb" userLabel="Container">
+                                                <rect key="frame" x="274.33333333333331" y="0.0" width="68.666666666666686" height="100"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHA-2n-srI" customClass="MatchesActionButton" customModule="Tinderbar" customModuleProvider="target">
+                                                        <rect key="frame" x="12.333333333333371" y="28" width="44" height="44"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="0K4-Nd-XID"/>
+                                                            <constraint firstAttribute="width" constant="44" id="dWB-lA-EIr"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="DHA-2n-srI" firstAttribute="centerX" secondItem="X5e-Um-iVb" secondAttribute="centerX" id="DgQ-Ih-csy"/>
+                                                    <constraint firstItem="DHA-2n-srI" firstAttribute="centerY" secondItem="X5e-Um-iVb" secondAttribute="centerY" id="lTZ-ib-lDn"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="IVK-b7-EVe" secondAttribute="bottom" id="KcV-iW-6nV"/>
+                                    <constraint firstItem="IVK-b7-EVe" firstAttribute="leading" secondItem="WHl-nh-vCU" secondAttribute="leading" constant="16" id="S0Z-wS-3Ug"/>
+                                    <constraint firstItem="IVK-b7-EVe" firstAttribute="top" secondItem="WHl-nh-vCU" secondAttribute="top" id="hHM-hF-ecr"/>
+                                    <constraint firstAttribute="height" constant="100" id="jlD-eP-hM7"/>
+                                    <constraint firstAttribute="trailing" secondItem="IVK-b7-EVe" secondAttribute="trailing" constant="16" id="pK4-Cs-1fe"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oyc-ih-XyN">
+                                <rect key="frame" x="12" y="60" width="351" height="602"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rH8-bd-Xvs" firstAttribute="centerY" secondItem="9lF-gd-loi" secondAttribute="centerY" id="9JI-ow-bLO"/>
-                            <constraint firstItem="rH8-bd-Xvs" firstAttribute="centerX" secondItem="9lF-gd-loi" secondAttribute="centerX" id="mAS-Wb-72A"/>
+                            <constraint firstItem="tFi-We-3bW" firstAttribute="bottom" secondItem="WHl-nh-vCU" secondAttribute="bottom" id="GdN-35-2N0"/>
+                            <constraint firstItem="WHl-nh-vCU" firstAttribute="leading" secondItem="tFi-We-3bW" secondAttribute="leading" id="MU6-RY-cDY"/>
+                            <constraint firstItem="WHl-nh-vCU" firstAttribute="top" secondItem="Oyc-ih-XyN" secondAttribute="bottom" constant="16" id="b4y-P5-b2e"/>
+                            <constraint firstItem="tFi-We-3bW" firstAttribute="trailing" secondItem="Oyc-ih-XyN" secondAttribute="trailing" constant="12" id="doS-1U-HMz"/>
+                            <constraint firstItem="Oyc-ih-XyN" firstAttribute="leading" secondItem="tFi-We-3bW" secondAttribute="leading" constant="12" id="kk5-BZ-t2J"/>
+                            <constraint firstItem="Oyc-ih-XyN" firstAttribute="top" secondItem="tFi-We-3bW" secondAttribute="top" constant="16" id="o2X-6W-tzs"/>
+                            <constraint firstItem="tFi-We-3bW" firstAttribute="trailing" secondItem="WHl-nh-vCU" secondAttribute="trailing" id="pI0-9m-Y2l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tFi-We-3bW"/>
                     </view>
+                    <connections>
+                        <outlet property="cardView" destination="Oyc-ih-XyN" id="7ZW-Zz-yC2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmJ-ZG-CZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
