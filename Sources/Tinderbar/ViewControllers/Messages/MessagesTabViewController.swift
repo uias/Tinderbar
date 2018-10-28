@@ -37,8 +37,8 @@ class MessagesTabViewController: TabmanViewController, PageboyViewControllerData
         
         bar.layer.masksToBounds = false
         bar.layer.shadowColor = UIColor.black.cgColor
-        bar.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
-        bar.layer.shadowOpacity = 0.2
+        bar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        bar.layer.shadowOpacity = 0.1
         bar.layer.shadowPath = UIBezierPath(rect: bar.bounds).cgPath
     }
     
