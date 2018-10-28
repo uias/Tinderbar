@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launch_logo" translatesAutoresizingMaskIntoConstraints="NO" id="uUm-nC-APK">
-                                <rect key="frame" x="169.5" y="26" width="36" height="36"/>
+                                <rect key="frame" x="169.5" y="25" width="36" height="36"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="KV2-sX-nOl"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uUm-nC-APK" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Cz7-o7-83w"/>
-                            <constraint firstItem="uUm-nC-APK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="SxG-Ba-kgi"/>
+                            <constraint firstItem="uUm-nC-APK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="SxG-Ba-kgi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
