@@ -93,15 +93,13 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		4612CD4F217E5BE600C1B4F7 /* Bar */ = {
+		4612CD4F217E5BE600C1B4F7 /* Bars */ = {
 			isa = PBXGroup;
 			children = (
-				4612CD50217E5BF500C1B4F7 /* TinderBar.swift */,
-				4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */,
-				4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */,
-				4612CD622180E70B00C1B4F7 /* TinderBarButton.swift */,
+				46D36A5421861BE90013635D /* TinderBar */,
+				46D36A5521861BF40013635D /* MessagesBar */,
 			);
-			path = Bar;
+			path = Bars;
 			sourceTree = "<group>";
 		};
 		4612CD68218101CD00C1B4F7 /* Utilities */ = {
@@ -135,7 +133,7 @@
 				464264EE217E3FCD0001C4AF /* AppDelegate.swift */,
 				464264F2217E3FCD0001C4AF /* Root.storyboard */,
 				4612CD4C217E439400C1B4F7 /* RootTabViewController.swift */,
-				4612CD4F217E5BE600C1B4F7 /* Bar */,
+				4612CD4F217E5BE600C1B4F7 /* Bars */,
 				4642650A217E41F30001C4AF /* ViewControllers */,
 				4612CD68218101CD00C1B4F7 /* Utilities */,
 				4612CD4E217E43C600C1B4F7 /* Resources */,
@@ -168,7 +166,6 @@
 			children = (
 				46426511217E42BA0001C4AF /* Messages.storyboard */,
 				4612CD6B2181058900C1B4F7 /* MessagesTabViewController.swift */,
-				4612CD6F218106CF00C1B4F7 /* MessagesBar.swift */,
 				46426508217E41E10001C4AF /* MessagesViewController.swift */,
 				4612CD6D218105AC00C1B4F7 /* MessagesFeedViewController.swift */,
 				46D36A4B218614BF0013635D /* Views */,
@@ -203,6 +200,25 @@
 				46D36A52218617F60013635D /* MessagesFeedCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		46D36A5421861BE90013635D /* TinderBar */ = {
+			isa = PBXGroup;
+			children = (
+				4612CD50217E5BF500C1B4F7 /* TinderBar.swift */,
+				4612CD52217E5C0400C1B4F7 /* TinderBarLayout.swift */,
+				4612CD642180EB7800C1B4F7 /* TinderBarButtonContainer.swift */,
+				4612CD622180E70B00C1B4F7 /* TinderBarButton.swift */,
+			);
+			path = TinderBar;
+			sourceTree = "<group>";
+		};
+		46D36A5521861BF40013635D /* MessagesBar */ = {
+			isa = PBXGroup;
+			children = (
+				4612CD6F218106CF00C1B4F7 /* MessagesBar.swift */,
+			);
+			path = MessagesBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
