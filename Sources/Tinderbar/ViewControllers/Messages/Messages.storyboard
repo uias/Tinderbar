@@ -25,31 +25,22 @@
             <point key="canvasLocation" x="225" y="107"/>
         </scene>
         <!--Messages View Controller-->
-        <scene sceneID="H0D-Po-qTB">
+        <scene sceneID="ZVg-An-YkV">
             <objects>
-                <viewController storyboardIdentifier="MessagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F3z-QZ-hL2" customClass="MessagesViewController" customModule="Tinderbar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eKo-g5-mWx">
+                <tableViewController storyboardIdentifier="MessagesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oJ7-Hs-66D" customClass="MessagesViewController" customModule="Tinderbar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rzV-ve-iSe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEh-Pp-JMZ">
-                                <rect key="frame" x="148.5" y="323" width="78" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="uEh-Pp-JMZ" firstAttribute="centerX" secondItem="eKo-g5-mWx" secondAttribute="centerX" id="AlW-b9-tbb"/>
-                            <constraint firstItem="uEh-Pp-JMZ" firstAttribute="centerY" secondItem="eKo-g5-mWx" secondAttribute="centerY" id="DrB-j7-Gva"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="bxG-Aw-81B"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VH5-lR-hhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <connections>
+                            <outlet property="dataSource" destination="oJ7-Hs-66D" id="brG-Rd-Miw"/>
+                            <outlet property="delegate" destination="oJ7-Hs-66D" id="BLc-hw-5jd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVn-Ea-c7D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217" y="850"/>
+            <point key="canvasLocation" x="-250" y="850"/>
         </scene>
         <!--Messages Feed View Controller-->
         <scene sceneID="sXM-Dm-Jys">
