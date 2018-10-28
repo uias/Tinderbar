@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 `AutoInsetter` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 1.x Releases
-- `1.4.x` Releases - [1.4.0](#140)
+- `1.4.x` Releases - [1.4.0](#140) | [1.4.1](#141)
 - `1.3.x` Releases - [1.3.0](#130)
 - `1.2.x` Releases - [1.2.0](#120) | [1.2.1](#121) | [1.2.2](#122) | [1.2.3](#123) | [1.2.4](#124) | [1.2.5](#125) | [1.2.6](#126)
 - `1.1.x` Releases - [1.1.0](#110)
@@ -11,17 +11,26 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.4.1](https://github.com/uias/AutoInsetter/releases/tag/1.4.1)
+Released on 2018-10-28
+
+#### Fixed
+- Potential lifecycle issues with setting `additionalSafeAreaInsets`.
+    - by [msaps](https://github.com/msaps)
+    
 ## [1.4.0](https://github.com/uias/AutoInsetter/releases/tag/1.4.0)
 Released on 2018-10-18
 
 #### Updated
 - Improved handling of `contentOffset` updates to be more effective and reliable.
+    - by [msaps](https://github.com/msaps)
 
 ## [1.3.0](https://github.com/uias/AutoInsetter/releases/tag/1.3.0)
 Released on 2018-09-17
 
 #### Updated
 - Migrated to use Swift 4.2.
+    - by [msaps](https://github.com/msaps)
 
 ---
 

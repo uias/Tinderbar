@@ -26,7 +26,8 @@ class RootTabViewController: TabmanViewController, PageboyViewControllerDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = self
+        dataSource = self
+        isScrollEnabled = false
         
         addBar(TinderBar.make(), dataSource: self, at: .top)
     }

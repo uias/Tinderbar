@@ -20,6 +20,8 @@ class MessagesTabViewController: TabmanViewController, PageboyViewControllerData
     private let tabItems = Tab.allCases.map({ BarItem(for: $0) })
     private lazy var viewControllers = tabItems.compactMap({ $0.makeViewController() })
     
+    let bar = MessagesBar.make()
+    
     // MARK: Lifecycle
     
     override func viewDidLoad() {
@@ -27,7 +29,17 @@ class MessagesTabViewController: TabmanViewController, PageboyViewControllerData
         
         self.dataSource = self
         
-        addBar(MessagesBar.make(), dataSource: self, at: .top)
+        addBar(bar, dataSource: self, at: .top)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        bar.layer.masksToBounds = false
+        bar.layer.shadowColor = UIColor.black.cgColor
+        bar.layer.shadowOffset = CGSize(width: 0.0, height: 3.0)
+        bar.layer.shadowOpacity = 0.2
+        bar.layer.shadowPath = UIBezierPath(rect: bar.bounds).cgPath
     }
     
     // MARK: PageboyViewControllerDataSource

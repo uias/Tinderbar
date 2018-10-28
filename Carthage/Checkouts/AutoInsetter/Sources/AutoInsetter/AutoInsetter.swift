@@ -37,7 +37,9 @@ public final class AutoInsetter {
         }
         
         if #available(iOS 11, *) {
-            childViewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
+            if requiredInsetSpec.additionalRequiredInsets != childViewController.additionalSafeAreaInsets {
+                childViewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
+            }
         }
         
         childViewController.forEachEmbeddedScrollView { (scrollView) in

@@ -10,8 +10,10 @@ import Tabman
 
 class TinderBar {
     
+    typealias BarType = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>
+    
     static func make() -> TMBar {
-        let bar = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>()
+        let bar = BarType()
         
         bar.isScrollEnabled = false
         
