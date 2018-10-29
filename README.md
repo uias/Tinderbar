@@ -1,5 +1,6 @@
 <p align="center">
     <img src=".readme/logo.png" width="890" alt="Tinderbar"/>
+    <img src=".readme/tinderbar.gif" width="890" alt="Tinderbar"/>
 </p>
 
 <p align="center">
