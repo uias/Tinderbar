@@ -17,8 +17,8 @@ class MessagesBar {
         
         bar.layout.contentMode = .fit
         bar.buttons.customize { (button) in
-            button.selectedColor = TinderColors.primaryTint
-            button.color = TinderColors.unselectedGray
+            button.selectedTintColor = TinderColors.primaryTint
+            button.tintColor = TinderColors.unselectedGray
             button.font = UIFont.systemFont(ofSize: 19, weight: .semibold)
         }
         

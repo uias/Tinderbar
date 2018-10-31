@@ -9,7 +9,7 @@
 import UIKit
 
 /// Container for BarButton objects and related controllers.
-public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
+public final class TMBarButtonCollection<BarButtonType: TMBarButton>: TMTransitionStyleable {
     
     // MARK: Types
     
@@ -38,6 +38,11 @@ public final class TMBarButtonCollection<BarButtonType: TMBarButton> {
     
     /// External handler that responds to interaction controller events.
     internal weak var interactionHandler: TMBarButtonInteractionHandler?
+    
+    // MARK: Customization
+    
+    /// Style to use when transitioning between buttons.
+    public var transitionStyle: TMTransitionStyle = .progressive
     
     // MARK: Init
     

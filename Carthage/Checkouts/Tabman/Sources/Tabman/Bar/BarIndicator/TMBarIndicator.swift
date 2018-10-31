@@ -9,7 +9,7 @@
 import UIKit
 
 /// View that provides indication of the current page position.
-open class TMBarIndicator: UIView {
+open class TMBarIndicator: UIView, TMTransitionStyleable {
     
     // MARK: Types
     
@@ -30,7 +30,7 @@ open class TMBarIndicator: UIView {
         case none
     }
     
-    // MARK: Properties
+    // MARK: Customization
     
     /// Display mode for the indicator.
     open var displayMode: DisplayMode {
@@ -46,8 +46,10 @@ open class TMBarIndicator: UIView {
      ///
      /// Defaults to `.bounce`.
     public var overscrollBehavior: OverscrollBehavior = .bounce
-    /// Whether the indicator should display progressively, traversing page indexes as progress.
+    /// Whether the indicator should display progressively, traversing page indexes as visible progress.
     public var isProgressive: Bool = false
+    /// Style of transition to use when updating the indicator.
+    public var transitionStyle: TMTransitionStyle = .progressive
     
     // MARK: Init
     

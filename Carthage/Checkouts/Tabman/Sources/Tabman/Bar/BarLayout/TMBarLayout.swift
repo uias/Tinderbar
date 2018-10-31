@@ -11,7 +11,7 @@ import UIKit
 /// `TMBarLayout` dictates the way that BarButtons are displayed within a bar, handling layout and population.
 ///
 /// Attention: You should not directly use `BarLayout`, but instead inherit from it or use an available subclass such as `TMHorizontalBarLayout`.
-open class TMBarLayout: TMBarViewFocusProvider {
+open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
     
     // MARK: Types
     
@@ -62,11 +62,12 @@ open class TMBarLayout: TMBarViewFocusProvider {
             return parent.contentInset
         }
     }
-    public var isPagingEnabled: Bool {
+    /// Transition style for updating layout parameters, such as scroll offset.
+    public var transitionStyle: TMTransitionStyle {
         set {
-            parent.isPagingEnabled = newValue
+            parent.transitionStyle = newValue
         } get {
-            return parent.isPagingEnabled
+            return parent.transitionStyle
         }
     }
     
