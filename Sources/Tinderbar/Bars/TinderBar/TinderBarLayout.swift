@@ -46,9 +46,7 @@ class TinderBarLayout: TMBarLayout {
     }
     
     override func insert(buttons: [TMBarButton], at index: Int) {
-        
-        for button in buttons {
-            
+        buttons.forEach { (button) in
             let container = TinderBarButtonContainer(for: button)
             stackView.addArrangedSubview(container)
             containers.append(container)
@@ -59,7 +57,12 @@ class TinderBarLayout: TMBarLayout {
     }
     
     override func remove(buttons: [TMBarButton]) {
-        fatalError("TODO")
+        let containers = stackView.arrangedSubviews.compactMap({ $0 as? TinderBarButtonContainer })
+        let containersToRemove = containers.filter({ buttons.contains($0.button) })
+        containersToRemove.forEach { (container) in
+            stackView.removeArrangedSubview(container)
+            container.removeFromSuperview()
+        }
     }
     
     override func focusArea(for position: CGFloat, capacity: Int) -> CGRect {

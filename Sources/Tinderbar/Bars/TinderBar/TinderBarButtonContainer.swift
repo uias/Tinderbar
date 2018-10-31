@@ -13,7 +13,7 @@ class TinderBarButtonContainer: UIView {
     
     // MARK: Properties
     
-    private let button: TMBarButton
+    internal let button: TMBarButton
     
     private var xAnchor: NSLayoutConstraint!
     
