@@ -1,0 +1,11 @@
+framework module Pageboy {
+  umbrella header "Pageboy.h"
+
+  export *
+  module * { export * }
+}
+
+module Pageboy.Swift {
+    header "Pageboy-Swift.h"
+    requires objc
+}
