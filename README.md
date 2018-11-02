@@ -15,7 +15,7 @@ A `TMBarView` embedded in a `TMSystemBar`, added to the `.top`.
 TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>
 ```
 
-It uses a custom layout in the form of [`TinderBarLayout`]() and custom [`TinderBarButton`]() bar buttons.
+It uses a custom layout in the form of [`TinderBarLayout`](./Sources/Tinderbar/Bars/TinderBar/TinderBarLayout.swift) and custom [`TinderBarButton`](./Sources/Tinderbar/Bars/TinderBar/TinderBarButton.swift) bar buttons.
 
 #### TinderBarLayout
 - Uses a horizontal stack view for buttons.
