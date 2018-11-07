@@ -87,7 +87,7 @@ class TinderBarLayout: TMBarLayout {
         // This adjusts the 'center x' constraint of the button in the container, so that it is offsetted
         // correctly. Results in -1.0 when offsetted to the left, 0.0 when focussed and 1.0 when offsetted to the right.
         // This is then interpreted for the button width and increments/decrements the constraint constant appropriately.
-        updateContainerOffsets(for: position)
+        updateContainerOffsets(for: max(0.0, min(CGFloat(capacity) - 1.0, position)))
         
         return CGRect(x: lowerViewFrame.origin.x + interpolation.origin.x,
                       y: 0.0,
