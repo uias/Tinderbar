@@ -23,7 +23,7 @@ class TinderBar {
         }
         
         // Wrap in a 'navigation bar'.
-        let navigationBar = TMSystemBar(for: bar)
+        let navigationBar = bar.systemBar()
         navigationBar.backgroundStyle = .flat(color: .white)
         return navigationBar
     }
