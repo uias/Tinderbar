@@ -16,7 +16,7 @@ public final class TMLabelBarButton: TMBarButton {
     // MARK: Defaults
     
     private struct Defaults {
-        static let contentInset = UIEdgeInsets(top: 12.0, left: 8.0, bottom: 12.0, right: 8.0)
+        static let contentInset = UIEdgeInsets(top: 12.0, left: 0.0, bottom: 12.0, right: 0.0)
         static let font = UIFont.systemFont(ofSize: 17.0, weight: .semibold)
         static let text = "Item"
     }
@@ -31,7 +31,7 @@ public final class TMLabelBarButton: TMBarButton {
     }
     private var fontIntrinsicContentSize: CGSize?
     
-    private let label = UILabel()
+    private let label = AnimateableLabel()
     
     public override var contentInset: UIEdgeInsets {
         set {
@@ -123,6 +123,7 @@ public final class TMLabelBarButton: TMBarButton {
         
         let transitionColor = tintColor.interpolate(with: selectedTintColor,
                                                     percent: selectionState.rawValue)
+        
         label.textColor = transitionColor
         
         // Because we can't animate nicely between fonts 😩
@@ -168,5 +169,17 @@ private extension TMLabelBarButton {
         
         self.fontIntrinsicContentSize = CGSize(width: largestWidth, height: largestHeight)
         invalidateIntrinsicContentSize()
+    }
+}
+
+private extension TMLabelBarButton {
+    
+    func makeTextLayer(for label: UILabel) -> CATextLayer {
+        let layer = CATextLayer()
+        layer.frame = label.convert(label.frame, to: self)
+        layer.string = label.text
+        layer.font = label.font
+        layer.fontSize = label.font.pointSize
+        return layer
     }
 }

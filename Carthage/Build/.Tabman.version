@@ -1,9 +1,9 @@
 {
-  "commitish" : "2.0.0.beta.1",
+  "commitish" : "2.0.0.beta.2",
   "iOS" : [
     {
       "name" : "Tabman",
-      "hash" : "0c985679a33f81502ca702520254d6c2116f7a65726ab467ed50b23b60404a36"
+      "hash" : "4ee26ad62df19e04ffc9cfe4d18a30862c4c08edf64a58a1d3b6952bc3420f61"
     }
   ]
 }

@@ -107,6 +107,7 @@ public final class TMSystemBar: UIView {
             contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
         
+        removeSubviewBackgrounds(from: barView)
         contentView.addArrangedSubview(barView)
     }
     
@@ -184,6 +185,18 @@ public final class TMSystemBar: UIView {
         }
         return nil
     }
+    
+    /// Removes backgrounds from any subviews (including TMBarBackgroundView)
+    ///
+    /// - Parameter view: View to remove backgrounds from.
+    func removeSubviewBackgrounds(from view: UIView) {
+        for subview in view.subviews {
+            subview.backgroundColor = .clear
+            if let backgroundView = subview as? TMBarBackgroundView {
+                backgroundView.style = .clear
+            }
+        }
+    }
 }
 
 extension TMSystemBar: TMBar {
@@ -202,6 +215,10 @@ extension TMSystemBar: TMBar {
         } set {
             bar.delegate = newValue
         }
+    }
+    
+    public var items: [TMBarItemable]? {
+        return bar.items
     }
     
     public func reloadData(at indexes: ClosedRange<Int>,

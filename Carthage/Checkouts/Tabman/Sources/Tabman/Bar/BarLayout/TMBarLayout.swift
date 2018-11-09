@@ -81,6 +81,7 @@ open class TMBarLayout: TMBarViewFocusProvider, TMTransitionStyleable {
                          insetGuides: TMBarLayoutInsetGuides) {
         self.parent = parent
         self.insetGuides = insetGuides
+
         layout(in: view)
     }
     

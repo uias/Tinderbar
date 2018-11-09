@@ -186,6 +186,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 @class NSCoder;
 
+SWIFT_CLASS("_TtC6Tabman16AnimateableLabel")
+@interface AnimateableLabel : UIView
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC6Tabman13EdgeFadedView")
 @interface EdgeFadedView : UIView
 - (void)layoutSubviews;
@@ -245,8 +256,8 @@ SWIFT_CLASS("_TtC6Tabman14TMBarIndicator")
 
 
 /// ‘Grid’ view containig vertical / horizontal stack views.
-SWIFT_CLASS("_TtC6Tabman13TMBarViewGrid")
-@interface TMBarViewGrid : UIView
+SWIFT_CLASS("_TtC6Tabman19TMBarViewLayoutGrid")
+@interface TMBarViewLayoutGrid : UIView
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
@@ -266,10 +277,34 @@ SWIFT_CLASS("_TtC6Tabman22TMBarViewScrollHandler")
 @end
 
 
+/// Indicator that fills the bar, displaying a solid color.
+SWIFT_CLASS("_TtC6Tabman19TMBlockBarIndicator")
+@interface TMBlockBarIndicator : TMBarIndicator
+- (void)layoutSubviews;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 /// Indicator that displays a vertical chevron centered along the X-axis.
 SWIFT_CLASS("_TtC6Tabman21TMChevronBarIndicator")
 @interface TMChevronBarIndicator : TMBarIndicator
 /// Color of the chevron.
+@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)layoutSubviews;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+/// Indicator that displays a circular dot centered along the X-axis.
+SWIFT_CLASS("_TtC6Tabman17TMDotBarIndicator")
+@interface TMDotBarIndicator : TMBarIndicator
+/// Color of the dot.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
 - (void)layoutSubviews;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -289,6 +324,8 @@ SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 
 
@@ -337,6 +374,8 @@ SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 @end
+
+
 
 
 

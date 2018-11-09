@@ -36,7 +36,7 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     
     internal let scrollViewContainer = EdgeFadedView()
     internal let scrollView = GestureScrollView()
-    internal private(set) var grid: TMBarViewGrid!
+    internal private(set) var layoutGrid: TMBarViewLayoutGrid!
     
     private let scrollHandler: TMBarViewScrollHandler
     
@@ -59,8 +59,8 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
     public let indicator = IndicatorType()
     /// Background view that appears behind all content in the bar view.
     ///
-    /// Note: Default style is `TMBarBackgroundView.Style.clear`.
-    public let backgroundView = TMBarBackgroundView(style: .clear)
+    /// Note: Default style is `.blur(style: .extraLight)`.
+    public let backgroundView = TMBarBackgroundView(style: .blur(style: .extraLight))
     
     /// Items that are displayed in the bar.
     public private(set) var items: [TMBarItemable]?
@@ -178,15 +178,15 @@ open class TMBarView<LayoutType: TMBarLayout, ButtonType: TMBarButton, Indicator
         rootContentStack.addArrangedSubview(scrollViewContainer)
         
         // Set up grid - stack views that content views are added to.
-        self.grid = TMBarViewGrid(with: layout.view)
-        scrollView.addSubview(grid)
-        grid.translatesAutoresizingMaskIntoConstraints = false
+        self.layoutGrid = TMBarViewLayoutGrid(with: layout.view)
+        scrollView.addSubview(layoutGrid)
+        layoutGrid.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            grid.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            grid.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            grid.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            grid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            grid.heightAnchor.constraint(equalTo: rootContentStack.heightAnchor)
+            layoutGrid.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            layoutGrid.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            layoutGrid.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            layoutGrid.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            layoutGrid.heightAnchor.constraint(equalTo: rootContentStack.heightAnchor)
             ])
         
         layout.layout(parent: self, insetGuides: contentInsetGuides)
@@ -271,7 +271,9 @@ extension TMBarView: TMBar {
         }
         
         self.items = items
-        reloadIndicatorPosition()
+        UIView.performWithoutAnimation {
+            reloadIndicatorPosition()
+        }
     }
     
     public func update(for position: CGFloat,
@@ -337,6 +339,7 @@ extension TMBarView: TMBarLayoutParent {
             scrollView.contentInset = sanitizedContentInset
             scrollView.contentOffset.x -= sanitizedContentInset.left
             
+            layoutGrid.horizontalSpacing = max(contentInset.left, contentInset.right)
             rootContainerTop.constant = newValue.top
             rootContainerBottom.constant = newValue.bottom
         } get {
@@ -359,13 +362,13 @@ extension TMBarView {
         let container = TMBarIndicatorContainer(for: indicator)
         switch indicator.displayMode {
         case .top:
-            grid.addTopSubview(container)
+            layoutGrid.addTopSubview(container)
             
         case .bottom:
-            grid.addBottomSubview(container)
+            layoutGrid.addBottomSubview(container)
             
         case .fill:
-            scrollView.addSubview(container)
+            scrollView.insertSubview(container, at: 0)
             container.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 container.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
@@ -433,11 +436,11 @@ private extension TMBarView {
         accessoryViews[location] = view
         switch location {
         case .leading:
-            grid.addLeadingSubview(view)
+            layoutGrid.addLeadingSubview(view)
         case .leadingPinned:
             rootContentStack.insertArrangedSubview(view, at: 0)
         case .trailing:
-            grid.addTrailingSubview(view)
+            layoutGrid.addTrailingSubview(view)
         case .trailingPinned:
             rootContentStack.insertArrangedSubview(view, at: rootContentStack.arrangedSubviews.count)
         }
