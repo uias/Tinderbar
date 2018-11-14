@@ -8,17 +8,21 @@ This guide aims to provide an easy transition from existing implementations of P
 
 - iOS 9.0+
 - Xcode 10.0+
-- Swift 4.2+
+- Swift 4.0+
 
 ## What's new
 
-- Added support for Swift 4.2.
-- View Controllers can now be inserted and removed dynamically. 
+- View Controllers can now be inserted and removed dynamically.
+- Fixed numerous performance and memory issues.
+- Improved Swift 4 & 4.2 compatibility.
 
 ## API Changes
 
 ### PageboyViewControllerDelegate
 - Default implementations of `PageboyViewControllerDelegate` have been removed - effectively requiring all functions to be implemented.
+
+### Properties
+- `showsPageControl` has now been removed completely due to [#128](https://github.com/uias/Pageboy/issues/128).
 
 ### Functions
 - `reloadPages()` is now `reloadData()`.

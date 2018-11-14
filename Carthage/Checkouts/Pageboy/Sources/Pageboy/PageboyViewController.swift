@@ -8,6 +8,8 @@
 
 import UIKit
 
+// swiftlint:disable file_length
+
 /// A simple, highly informative page view controller.
 open class PageboyViewController: UIViewController {
     
@@ -19,11 +21,8 @@ open class PageboyViewController: UIViewController {
     // MARK: Properties
     
     internal var pageViewController: UIPageViewController?
-    /// An invisible scroll view used for silently influencing navigation bar titles.
-    internal var invisibleScrollView: UIScrollView?
     internal var previousPagePosition: CGFloat?
     internal var expectedTransitionIndex: PageIndex?
-    internal let childScrollObserver = ScrollObservationService()
 
     /// The orientation that the page view controller transitions on.
     public var navigationOrientation: UIPageViewController.NavigationOrientation = .horizontal {
@@ -177,17 +176,12 @@ open class PageboyViewController: UIViewController {
     /// Auto Scroller for automatic time-based page transitions.
     public let autoScroller = PageboyAutoScroller()
     
-    /// Whether to show the built-in UIPageViewController page control.
-    @available(*, unavailable, message: "Temporarily unavailable due to iOS 11.2 UIPageViewController issue. See here: https://github.com/uias/Pageboy/issues/128")
-    public var showsPageControl: Bool = false
-    
     // MARK: Lifecycle
 
     open override func viewDidLoad() {
         super.viewDidLoad()
 
         autoScroller.handler = self
-        childScrollObserver.delegate = self
         
         setUpPageViewController()
     }

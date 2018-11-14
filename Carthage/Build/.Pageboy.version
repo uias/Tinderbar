@@ -1,9 +1,9 @@
 {
-  "commitish" : "3.0.0.beta.3",
+  "commitish" : "3.0.0",
   "iOS" : [
     {
       "name" : "Pageboy",
-      "hash" : "9efdda63fbda3877f6e86c81ccb8d78595c883b7094d765601ec6689d5ac8bc5"
+      "hash" : "bc3654a26c3ffd6342b09b6c2a00792bac48642871ddd22ad4193e3eed7b2556"
     }
   ]
 }

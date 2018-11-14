@@ -234,8 +234,6 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 
 
 
-
-
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy)) <UIPageViewControllerDelegate>
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> * _Nonnull)pendingViewControllers;
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> * _Nonnull)previousViewControllers transitionCompleted:(BOOL)completed;
@@ -245,8 +243,6 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy))
 - (void)displayLinkDidTick;
 @end
-
-
 
 
 
@@ -263,12 +259,6 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 
 
 
-/// UIScrollView which has a content view that matches a parent view’s height & width.
-SWIFT_CLASS("_TtC7Pageboy23ParentMatchedScrollView")
-@interface ParentMatchedScrollView : UIScrollView
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 @class CAAnimation;
 

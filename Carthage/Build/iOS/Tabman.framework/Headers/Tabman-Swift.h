@@ -357,6 +357,7 @@ SWIFT_CLASS("_TtC6Tabman11TMSystemBar")
 
 
 
+/// <code>TMBarButton</code> which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.
 SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 @interface TMTabItemBarButton : TMBarButton
 /// Tint color of the button when unselected / normal.

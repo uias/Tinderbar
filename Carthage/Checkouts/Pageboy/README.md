@@ -6,7 +6,7 @@
     <a href="https://travis-ci.org/uias/Pageboy">
         <img src="https://travis-ci.org/uias/Pageboy.svg?branch=master" />
     </a>
-    <img src="https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Swift-4-orange.svg?style=flat" />
     <a href="https://cocoapods.org/pods/Pageboy">
         <img src="https://img.shields.io/cocoapods/v/Pageboy.svg" alt="CocoaPods" />
     </a>
@@ -15,9 +15,6 @@
     </a>
 	<a href="https://github.com/Carthage/Carthage">
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" />
-    </a>
-	<a href="https://codecov.io/gh/uias/Pageboy">
-        <img src="https://codecov.io/gh/uias/Pageboy/branch/master/graph/badge.svg" />
     </a>
 	<a href="https://github.com/uias/Pageboy/releases">
         <img src="https://img.shields.io/github/release/uias/Pageboy.svg" />
@@ -34,7 +31,7 @@
 - [x] Support for custom animated page transitions.
 
 ## 📋 Requirements
-Pageboy requires iOS 9 / tvOS 10; and is written in Swift 4.2.
+Pageboy requires iOS 9 / tvOS 10; and Swift 4.
 
 ## 📲 Installation
 ### CocoaPods
@@ -64,7 +61,7 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
 
     override func viewDidLoad() {
         super.viewDidLoad()
-	
+        
 	self.dataSource = self
     }
 }
@@ -76,12 +73,12 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
 func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
     return viewControllers.count
 }
-    
+
 func viewController(for pageboyViewController: PageboyViewController,
                     at index: PageboyViewController.PageIndex) -> UIViewController? {
     return viewControllers[index]
 }
-    
+
 func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
     return nil
 }
@@ -140,28 +137,28 @@ pageViewController.scrollToPage(.next, animated: true)
 - Interactive scrolling can also be controlled with `.isScrollEnabled`.
 
 ### Insertion & Deletion
-Pageboy 3 provides the ability to insert and delete pages dynamically from the `PageboyViewController`.
+Pageboy provides the ability to insert and delete pages dynamically in the `PageboyViewController`.
 
 ```swift
-pageViewController.insertPage(at index: 0)
-pageViewController.deletePage(at index: 2)
+func insertPage(at index: PageIndex, then updateBehavior: PageUpdateBehavior)
+func deletePage(at index: PageIndex, then updateBehavior: PageUpdateBehavior)
 ```
 
-*This behaves similarly to the insertion functionality available in `UITableView`, in the fact that you have to update the data source prior to calling any of the update functions.*
+*This behaves similarly to the insertion of rows in `UITableView`, in the fact that you have to update the data source prior to calling any of the update functions.*
 
 **Example:**
 
 ```swift
 let index = 2
 viewControllers.insert(UIViewController(), at: index)
-pageViewController.insertPage(at index: index)
+pageViewController.insertPage(at: index)
 ```
 
 *The default behaviour after inserting or deleting a page is to scroll to the update location, this however can be configured by passing a  `PageUpdateBehavior` value other than `.scrollToUpdate`.*
 
 ## ⚡️ Other Extras
 
-- `reloadPages()` - Reload the view controllers in the page view controller. (Reloads the data source).
+- `reloadData()` - Reload the view controllers in the page view controller. (Reloads the data source).
 - `.navigationOrientation` - Whether to orientate the pages horizontally or vertically.
 - `.currentViewController` - The currently visible view controller if it exists.
 - `.currentPosition` - The exact current relative position of the page view controller.
@@ -169,7 +166,7 @@ pageViewController.insertPage(at index: index)
 - `.parentPageboy` - Access the immediate parent `PageboyViewController` from any child view controller.
 
 ### Animated Transitions
-Pageboy also provides custom transition support for **animated transitions**. This can be customised via the `.transition` property on `PageboyViewController`. 
+Pageboy also provides custom transition support for **animated transitions**. This can be customised via the `.transition` property on `PageboyViewController`.
 
 ```swift
 pageboyViewController.transition = Transition(style: .push, duration: 1.0)
@@ -183,6 +180,7 @@ pageboyViewController.transition = Transition(style: .push, duration: 1.0)
 ```swift
 pageboyViewController.autoScroller.enable()
 ```
+
 Support for custom intermission duration and other scroll behaviors is also available.
 
 ## 👨🏻‍💻 About

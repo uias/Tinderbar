@@ -135,8 +135,6 @@ internal extension PageboyViewController {
         let viewController = dataSource?.viewController(for: self, at: index)
         if let viewController = viewController {
             viewControllerMap[viewController] = index
-            
-            childScrollObserver.register(viewController: viewController, for: index)
         }
         return viewController
     }
@@ -166,21 +164,27 @@ internal extension PageboyViewController {
         pageViewController.dataSource = self
         self.pageViewController = pageViewController
         
+        #if swift(>=4.2)
         addChild(pageViewController)
+        #else
+        addChildViewController(pageViewController)
+        #endif
         if let existingZIndex = existingZIndex {
             view.insertSubview(pageViewController.view, at: existingZIndex)
         } else {
             view.addSubview(pageViewController.view)
+            #if swift(>=4.2)
             view.sendSubviewToBack(pageViewController.view)
+            #else
+            view.sendSubview(toBack: pageViewController.view)
+            #endif
         }
         pageViewController.view.pinToSuperviewEdges()
+        #if swift(>=4.2)
         pageViewController.didMove(toParent: self)
-      
-        // Add hidden scroll view that will be used to interact with navigation bar large titles.
-        let invisibleScrollView = ParentMatchedScrollView.matching(parent: view)
-        view.addSubview(invisibleScrollView)
-        view.sendSubviewToBack(invisibleScrollView)
-        self.invisibleScrollView = invisibleScrollView
+        #else
+        pageViewController.didMove(toParentViewController: self)
+        #endif
         
         pageViewController.scrollView?.delegate = self
         pageViewController.view.backgroundColor = .clear
@@ -193,7 +197,11 @@ internal extension PageboyViewController {
     
     private func destroyCurrentPageViewController() {
         pageViewController?.view.removeFromSuperview()
+        #if swift(>=4.2)
         pageViewController?.removeFromParent()
+        #else
+        pageViewController?.removeFromParentViewController()
+        #endif
         pageViewController = nil
     }
     
@@ -205,6 +213,7 @@ internal extension PageboyViewController {
         setUpPageViewController(reloadViewControllers: false)
     }
     
+    #if swift(>=4.2)
     /// The options to be passed to a UIPageViewController instance.
     internal var pageViewControllerOptions: [UIPageViewController.OptionsKey: Any]? {
         var options = [UIPageViewController.OptionsKey: Any]()
@@ -218,6 +227,21 @@ internal extension PageboyViewController {
         }
         return options
     }
+    #else
+    /// The options to be passed to a UIPageViewController instance.
+    internal var pageViewControllerOptions: [String: Any]? {
+        var options = [String: Any]()
+        
+        if interPageSpacing > 0.0 {
+            options[UIPageViewControllerOptionInterPageSpacingKey] = interPageSpacing
+        }
+        
+        guard options.count > 0 else {
+            return nil
+        }
+        return options
+    }
+    #endif
 }
 
 // MARK: - UIPageViewControllerDataSource, PageboyViewControllerDataSource
