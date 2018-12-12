@@ -1,6 +1,4 @@
-<p align="center">
-    <img src="Docs/img/tm_logo.png" width="890" alt="Tabman"/>
-</p>
+![](Docs/img/tm_logo.png)
 
 <p align="center">
     <a href="https://travis-ci.org/uias/Tabman">
@@ -21,12 +19,14 @@
     </a>
 </p>
 
-<p align="center">
-    <img src="Docs/img/tm_header.png" width="890" alt="Tabman"/>
-</p>
- 
+![](Docs/img/tm_header.png)
+
 ## ⭐️ Features
-TODO
+- Easy to implement page view controller with interactive indicator bars.
+- Highly adaptable and powerful customization.
+- Fully extensible with mix-and-match component library.
+- Built on [Pageboy](https://github.com/uias/Pageboy), a powerful, informative page view controller.
+- Automatically insets child view controller contents.
 
 ## 📋 Requirements
 Tabman requires iOS 9; and is written in Swift 4.
@@ -68,7 +68,7 @@ class TabViewController: TabmanViewController {
 
         // Create bar
         let bar = TMBar.ButtonBar()
-        bar.animationStyle = .snap // Customize
+        bar.transitionStyle = .snap // Customize
 
         // Add to view
         addBar(bar, dataSource: self, at: .top)
@@ -105,34 +105,31 @@ extension TabViewController: PageboyViewControllerDataSource, BarDataSource {
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
 
-<p align="center">
-    <img src="Docs/img/bar_styles.png" width="890" alt="Bar Styles"/>
-</p>
+![](Docs/img/bar_styles.png)
 
-These are all available as types of `TMBar` in [TMBar+Templates]().
+These are all available as types of `TMBar` in [TMBar+Templates](https://github.com/uias/Tabman/blob/master/Sources/Tabman/Bar/TMBar%2BTemplates.swift).
 
 ```swift
 let bar = TMBar.ButtonBar()
 let tabBar = TMBar.TabBar()
 ```
 
-### Customize all the things
+### Customization
 Bar customization is available via properties on each functional area of the bar. Each bar is made up of 4 distinct areas:
 
-<p align="center">
-    <img src="Docs/img/bar_breakdown.png" width="890" alt="Bar Breakdown"/>
-</p>
+![](Docs/img/bar_breakdown.png)
+
 
 #### TMBarView
-`TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and animation behaviors.
+`TMBarView` is the root view of every bar, and provides the glue for meshing all the other functional areas together. You can change a few things here, such as background style and transitioning behavior.
 
 ```swift
 bar.background.style = .blur(style: .extraLight)
-bar.animationStyle = .snap
+bar.transitionStyle = .snap
 ```
 *This is also the entry point for all other customization.*
 
-**More: [**TMBarView Docs**]()**
+**More: [**TMBarView Docs**](https://uias.github.io/Tabman/master/Bar.html)**
 
 #### TMBarLayout
 `TMBarLayout` is the foundation of a `TMBarView`, dictating how bar buttons are displayed and laid out. Look here if you want to change things such as button spacing, content insets and other layout'y things.
@@ -141,7 +138,7 @@ bar.animationStyle = .snap
 bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
 ```
 
-**More: [**TMBarLayout Docs**]()**
+**More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
 
 #### TMBarButton
 `TMBarButton` views are populated in the `TMBarLayout` and correspond to the items provided by the data source. This is the place to change things like fonts, image sizing and highlight colors.
@@ -157,7 +154,7 @@ bar.buttons.customize { (button) in
 
 *This will be applied to both existing bar buttons and any that are added to the bar afterwards.*
 
-**More: [**TMBarButton Docs**]()**
+**More: [**TMBarButton Docs**](https://uias.github.io/Tabman/master/Buttons.html)**
 
 #### TMBarIndicator
 Lastly is `TMBarIndicator` - which indicates the current page index status for the bar. You can change behavior characteristics here as well as how the indicator looks.
@@ -167,7 +164,7 @@ bar.indicator.overscrollBehavior = .compress
 bar.indicator.weight = .heavy
 ```
 
-**More: [**TMBarIndicator Docs**]()**
+**More: [**TMBarIndicator Docs**](https://uias.github.io/Tabman/master/Indicator.html)**
 
 ## 🎨 Advanced Customization
 Tabman provides the complete freedom to mix-and-match the built-in components; and also define your own.
@@ -210,7 +207,7 @@ let bar = BarView<HorizontalBarLayout, LabelBarButton, DotBarIndicator>
 ### Going Completely Custom
 As replacing the type of layout, button or indicator is as easy as above; you have the ability to define your own subclasses without too much of a headache.
 
-[**Custom Tabman Components**]()
+[**Custom Tabman Components**](https://uias.github.io/Tabman/master/going-custom.html)
 
 There are also a example projects that showcase custom layouts and such:
 
@@ -224,10 +221,12 @@ Tabman uses [AutoInsetter](https://github.com/uias/AutoInsetter) to automaticall
 
 `TabmanViewController` also provides `barLayoutGuide`, a `UILayoutGuide` that provides top and bottom anchors taking into account any bars added to the `.top` or `.bottom` `TabmanViewController.BarLocation` areas. The raw `UIEdgeInsets` are also available via `.barInsets`.
 
+Auto insetting can be **disabled** by setting `automaticallyAdjustsChildInsets` to `false` - however this **must be done before `viewDidLoad`**.
+
 *Tabman will not provide any insetting behavior for bars that are added to custom views.*
 
 ## ⚠️ Troubleshooting
-If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/TROUBLESHOOTING.md).
+If you are encountering issues with Tabman, please check out the [Troubleshooting Guide](Docs/Troubleshooting.md).
 
 If you're still having problems, feel free to raise an [issue](https://github.com/uias/Tabman/issues/new).
 

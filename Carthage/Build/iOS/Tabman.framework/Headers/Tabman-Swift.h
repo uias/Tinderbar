@@ -367,7 +367,9 @@ SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 
 @class NSBundle;
 
-/// Page view controller with a bar indicator component.
+/// A view controller which embeds a <code>PageboyViewController</code> and provides the ability to add bars which
+/// can directly manipulate, control and display the status of the page view controller. It also handles
+/// automatic insetting of child view controller contents.
 SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 @interface TabmanViewController : PageboyViewController
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

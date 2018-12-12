@@ -287,8 +287,6 @@ SWIFT_CLASS("_TtC7Pageboy19TransitionOperation")
 
 
 
-
-
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif

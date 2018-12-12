@@ -10,7 +10,9 @@ import UIKit
 import Pageboy
 import AutoInsetter
 
-/// Page view controller with a bar indicator component.
+/// A view controller which embeds a `PageboyViewController` and provides the ability to add bars which
+/// can directly manipulate, control and display the status of the page view controller. It also handles
+/// automatic insetting of child view controller contents.
 open class TabmanViewController: PageboyViewController, PageboyViewControllerDelegate, TMBarDelegate {
     
     // MARK: Types
@@ -40,6 +42,11 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     private var requiredInsets: Insets?
     private let autoInsetter = AutoInsetter()
+    /// Whether to automatically adjust child view controller content insets with bar geometry.
+    ///
+    /// This must be set before `viewDidLoad`, setting it after this point will result in no change.
+    /// Default is `true`.
+    public var automaticallyAdjustsChildInsets: Bool = true
     /// The insets that are required to safely layout content between the bars
     /// that have been added.
     ///
@@ -79,8 +86,9 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        configureBarLayoutGuide(barLayoutGuide)
+        autoInsetter.isEnabled = automaticallyAdjustsChildInsets
         
+        configureBarLayoutGuide(barLayoutGuide)
         layoutContainers(in: view)
     }
     
@@ -92,18 +100,21 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: Pageboy
     
+    /// :nodoc:
     open override func insertPage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
         bars.forEach({ $0.reloadData(at: index...index, context: .insertion) })
         super.insertPage(at: index, then: updateBehavior)
     }
     
+    /// :nodoc:
     open override func deletePage(at index: PageboyViewController.PageIndex,
                                   then updateBehavior: PageboyViewController.PageUpdateBehavior) {
         bars.forEach({ $0.reloadData(at: index...index, context: .deletion) })
         super.deletePage(at: index, then: updateBehavior)
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     willScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
@@ -118,6 +129,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollTo position: CGPoint,
                                     direction: NavigationDirection,
@@ -129,6 +141,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
         }
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didScrollToPageAt index: PageIndex,
                                     direction: NavigationDirection,
@@ -138,6 +151,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
                          animated: false)
     }
     
+    /// :nodoc:
     open func pageboyViewController(_ pageboyViewController: PageboyViewController,
                                     didReloadWith currentViewController: UIViewController,
                                     currentPageIndex: PageIndex) {
@@ -151,6 +165,7 @@ open class TabmanViewController: PageboyViewController, PageboyViewControllerDel
     
     // MARK: TMBarDelegate
     
+    /// :nodoc:
     open func bar(_ bar: TMBar,
                   didRequestScrollTo index: PageboyViewController.PageIndex) {
         scrollToPage(.at(index: index), animated: true, completion: nil)

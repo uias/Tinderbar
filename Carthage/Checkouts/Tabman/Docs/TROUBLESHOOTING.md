@@ -6,11 +6,11 @@ If you are having trouble using Tabman, please check out this document to see if
 - [Automatic Insetting](#automatic-insetting)
 
 ## Automatic Insetting
-Tabman is designed to automatically inset the contents of child view controllers that contain `UIScrollView` and other derived classes so that it shows correctly beneath the bar: 
+Tabman is designed to automatically inset the contents of child view controllers that contain `UIScrollView` and other derived classes so that it shows correctly beneath the bar:
 
 <p align="center">
     </br>
-    <img src="Resources/autoinsetting.png" width="375" alt="Auto Insetting"/>
+    <img src="./img/autoinsetting.png" width="375" alt="Auto Insetting"/>
     </br>
 </p>
 
@@ -22,26 +22,26 @@ Ensure you're using the latest releases of both [**Tabman**](https://github.com/
 ### 1) Ensure it's turned on
 Make sure that auto insetting is enabled (it is by default).
 ```swift
-.automaticallyAdjustsChildScrollViewInsets = true
+.automaticallyAdjustsChildInsets = true
 ```
 
 ### 2) Check your constraints
-If you are using a custom view controller (and not something like a `UITableViewController`), the way that your content scroll view is constrained to the superview is very important. 
+If you are using a custom view controller (and not something like a `UITableViewController`), the way that your content scroll view is constrained to the superview is very important.
 
-The auto insetting engine in Tabman calculates and applies all insets relative to the superview, rather than any layout guides. Therefore you need to ensure that your `UIScrollView` is constrained directly to the superview, as shown below:
+It is recommended that your `UIScrollView` is constrained directly to the superview, as shown below:
 
 <p align="center">
-    <img src="Resources/autoinsetting_constraints.png" width="890" alt="Auto Insetting"/>
+    <img src="./img/autoinsetting_constraints.png" width="890" alt="Auto Insetting"/>
 </p>
 
 As you can see, the constraints for the `UITableView` are pinned to the superview rather than the `topLayoutGuide` or `Safe Area`.
 
 <p align="center">
-    <img src="Resources/autoinsetting_constraints_detail.png" width="262" alt="Auto Insetting Constraints"/>
+    <img src="./img/autoinsetting_constraints_detail.png" width="262" alt="Auto Insetting Constraints"/>
 </p>
 
 ### 3) Watch out for UIKit
-Tabman will also handle any `UIKit` properties that require modifying in order to get a reliable insetting behaviour. As we're providing a completely custom implementation, we disable a lot of the `UIKit` helper properties that would otherwise inset content correctly for system components such as a `UITabBar`. 
+Tabman will also handle any `UIKit` properties that require modifying in order to get a reliable insetting behaviour. As we're providing a completely custom implementation, we disable a lot of the `UIKit` helper properties that would otherwise inset content correctly for system components such as a `UITabBar`.
 
 Therefore, you shouldn't need to modify or have any of the following in your view controller code:
 ```swift

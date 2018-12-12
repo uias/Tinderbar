@@ -4,12 +4,10 @@ branches:
   except:
     - gh-pages
 
-osx_image: xcode10
+osx_image: xcode10.1
 
 env:
   global:
-    - LC_CTYPE=en_US.UTF-8
-    - LANG=en_US.UTF-8
     - FRAMEWORK_NAME="Tabman"
     - UPDATE_DOCS="true"
 
@@ -18,15 +16,17 @@ before_install:
 - brew outdated carthage || brew upgrade carthage
 - bundle install
 
+#before_script:
+#- bundle exec danger
+
 script:
-- .travis/build.sh
+- .scripts/build
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
-# - test $TRAVIS_PULL_REQUEST == "false" &&
-  # test $TRAVIS_BRANCH == "master" &&
-  # test $UPDATE_DOCS == "true" &&
-  # .scripts/update-gh-pages
+  - bash <(curl -s https://codecov.io/bash) -J Tabman
+  - test $TRAVIS_PULL_REQUEST == "false" &&
+    test $TRAVIS_BRANCH == "master" &&
+    .scripts/update-gh-pages
 
 notifications:
   email: false
