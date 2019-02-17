@@ -184,6 +184,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+
+
 @protocol UIViewControllerTransitionCoordinator;
 @class NSBundle;
 @class NSCoder;
@@ -220,8 +222,6 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 
 
 
-
-
 @class UIPageViewController;
 
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy)) <UIPageViewControllerDataSource>
@@ -234,17 +234,19 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 
 
 
+
+
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy)) <UIPageViewControllerDelegate>
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> * _Nonnull)pendingViewControllers;
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> * _Nonnull)previousViewControllers transitionCompleted:(BOOL)completed;
 @end
 
 
+
+
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy))
 - (void)displayLinkDidTick;
 @end
-
-
 
 @class UIScrollView;
 
