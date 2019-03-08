@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - VC Reloading
-public extension PageboyViewController {
+extension PageboyViewController {
     
     /// Reload the view controllers in the page view controller.
     /// This reloads the dataSource entirely, calling viewControllers(forPageboyViewController:)
@@ -24,7 +24,7 @@ public extension PageboyViewController {
     internal func reloadData(reloadViewControllers: Bool) {
 
         if reloadViewControllers {
-            viewControllerMap.removeAll()
+            viewControllerIndexMap.removeAll()
         }
 
         let newViewControllerCount = dataSource?.numberOfViewControllers(in: self) ?? 0
@@ -158,16 +158,16 @@ internal extension PageboyViewController {
 }
 
 // MARK: - Data Source interaction
-internal extension PageboyViewController {
+extension PageboyViewController {
     
     /// Load view controller from the data source.
     ///
     /// - Parameter index: Index of the view controller to load.
     /// - Returns: View controller if it exists.
-    func fetchViewController(at index: PageIndex) -> UIViewController? {
+    internal func fetchViewController(at index: PageIndex) -> UIViewController? {
         let viewController = dataSource?.viewController(for: self, at: index)
         if let viewController = viewController {
-            viewControllerMap[viewController] = index
+            viewControllerIndexMap.set(index, for: viewController)
         }
         return viewController
     }
@@ -181,7 +181,7 @@ internal extension PageboyViewController {
     /// Set up inner UIPageViewController ready for displaying pages.
     ///
     /// - Parameter reloadViewControllers: Reload the view controllers data source for the PageboyViewController.
-    internal func setUpPageViewController(reloadViewControllers: Bool = true) {
+    func setUpPageViewController(reloadViewControllers: Bool = true) {
         let existingZIndex: Int?
         if let pageViewController = self.pageViewController { // destroy existing page VC
             existingZIndex = view.subviews.index(of: pageViewController.view)
@@ -239,7 +239,7 @@ internal extension PageboyViewController {
     }
     
     /// Re-initialize the internal UIPageViewController instance without reloading data source if it currently exists.
-    internal func reconfigurePageViewController() {
+    func reconfigurePageViewController() {
         guard pageViewController != nil else {
             return
         }
@@ -248,7 +248,7 @@ internal extension PageboyViewController {
     
     #if swift(>=4.2)
     /// The options to be passed to a UIPageViewController instance.
-    internal var pageViewControllerOptions: [UIPageViewController.OptionsKey: Any]? {
+    var pageViewControllerOptions: [UIPageViewController.OptionsKey: Any]? {
         var options = [UIPageViewController.OptionsKey: Any]()
         
         if interPageSpacing > 0.0 {
@@ -262,7 +262,7 @@ internal extension PageboyViewController {
     }
     #else
     /// The options to be passed to a UIPageViewController instance.
-    internal var pageViewControllerOptions: [String: Any]? {
+    var pageViewControllerOptions: [String: Any]? {
         var options = [String: Any]()
         
         if interPageSpacing > 0.0 {

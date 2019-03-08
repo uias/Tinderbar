@@ -1,1 +1,1 @@
-github "uias/Tabman" "tabman2"
+github "uias/Tabman" ~> 2.0

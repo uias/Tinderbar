@@ -236,12 +236,12 @@ SWIFT_CLASS("_TtC7Pageboy21PageboyViewController")
 
 
 
+
+
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy)) <UIPageViewControllerDelegate>
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> * _Nonnull)pendingViewControllers;
 - (void)pageViewController:(UIPageViewController * _Nonnull)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> * _Nonnull)previousViewControllers transitionCompleted:(BOOL)completed;
 @end
-
-
 
 
 @interface PageboyViewController (SWIFT_EXTENSION(Pageboy))

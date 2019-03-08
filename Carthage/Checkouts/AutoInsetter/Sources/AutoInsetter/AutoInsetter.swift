@@ -17,32 +17,59 @@ public final class AutoInsetter {
     private var currentContentOffsets = [UIScrollView: CGPoint]()
     
     /// Whether auto-insetting is enabled.
-    public var isEnabled: Bool = true
+    @available(*, deprecated: 1.5.0, message: "Use enable(for:)")
+    public var isEnabled: Bool {
+        set {
+            if newValue {
+                _enable(for: nil)
+            }
+        } get {
+            return _isEnabled
+        }
+    }
+    private var _isEnabled: Bool = false
     
     // MARK: Init
     
     public init() {}
     
+    // MARK: State
+    
+    /// Enable Auto Insetting for a view controller.
+    ///
+    /// - Parameter viewController: View controller that will provide insetting.
+    public func enable(for viewController: UIViewController?) {
+        _enable(for: viewController)
+    }
+    
+    private func _enable(for viewController: UIViewController?) {
+        _isEnabled = true
+        viewController?.automaticallyAdjustsScrollViewInsets = false
+    }
+    
     // MARK: Insetting
     
-    /// Inset a child view controller by a set of required insets.
+    /// Inset a view controller by a set of required insets.
     ///
     /// - Parameters:
-    ///   - childViewController: Child view controller to inset.
+    ///   - viewController: view controller to inset.
     ///   - requiredInsetSpec: The required inset specification.
-    public func inset(_ childViewController: UIViewController?,
+    public func inset(_ viewController: UIViewController?,
                       requiredInsetSpec: AutoInsetSpec) {
-        guard let childViewController = childViewController, isEnabled else {
+        guard let viewController = viewController, _isEnabled else {
             return
         }
         
         if #available(iOS 11, *) {
-            if requiredInsetSpec.additionalRequiredInsets != childViewController.additionalSafeAreaInsets {
-                childViewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
+            if requiredInsetSpec.additionalRequiredInsets != viewController.additionalSafeAreaInsets {
+                viewController.additionalSafeAreaInsets = requiredInsetSpec.additionalRequiredInsets
             }
         }
         
-        childViewController.forEachEmbeddedScrollView { (scrollView) in
+        guard viewController.shouldEvaluateEmbeddedScrollViews() else {
+            return
+        }
+        viewController.forEachEmbeddedScrollView { (scrollView) in
             
             if #available(iOS 11.0, *) {
                 scrollView.contentInsetAdjustmentBehavior = .never
@@ -50,7 +77,7 @@ public final class AutoInsetter {
             
             let requiredContentInset = calculateActualRequiredContentInset(for: scrollView,
                                                                            from: requiredInsetSpec,
-                                                                           in: childViewController)
+                                                                           in: viewController)
             
             // dont update if we dont need to
             if scrollView.contentInset != requiredContentInset {
@@ -85,14 +112,14 @@ public final class AutoInsetter {
         }
     }
     
-    private func reset(_ childViewController: UIViewController,
+    private func reset(_ viewController: UIViewController,
                        from requiredInsetSpec: AutoInsetSpec) {
         
         if #available(iOS 11, *) {
-            childViewController.additionalSafeAreaInsets = .zero
+            viewController.additionalSafeAreaInsets = .zero
         }
         
-        childViewController.forEachEmbeddedScrollView { (scrollView) in
+        viewController.forEachEmbeddedScrollView { (scrollView) in
             if #available(iOS 11, *) {
                 scrollView.contentInsetAdjustmentBehavior = .automatic
             }

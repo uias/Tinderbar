@@ -48,7 +48,7 @@ class ScenarioViewController<ChildViewControllerType: UIViewController>: TabmanV
         
         dataSource = self
         
-        addBar(TMNavigationBar(for: TMBar.ButtonBar()), dataSource: self, at: .top)
+        addBar(TMBar.ButtonBar().systemBar(), dataSource: self, at: .top)
     }
     
     // MARK: PageboyViewControllerDataSource
@@ -65,7 +65,7 @@ class ScenarioViewController<ChildViewControllerType: UIViewController>: TabmanV
         return nil
     }
     
-    func barItem(for bar: TMBar, at index: Int) -> TMBarItem {
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         return TMBarItem(title: "Page Index \(index)")
     }
 }

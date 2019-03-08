@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension PageboyViewController {
+extension PageboyViewController {
     
     /// Behavior to evaluate after a page update.
     ///

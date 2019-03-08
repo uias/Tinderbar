@@ -43,4 +43,11 @@ internal extension UIViewController {
             action(scrollView)
         }
     }
+    
+    func shouldEvaluateEmbeddedScrollViews() -> Bool {
+        if self is UIPageViewController { // Ignore UIPageViewController
+            return false
+        }
+        return true
+    }
 }

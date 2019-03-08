@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension PageboyViewController {
+extension PageboyViewController {
  
     /// A page index.
     public typealias PageIndex = Int

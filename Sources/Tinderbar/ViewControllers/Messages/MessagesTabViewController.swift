@@ -71,12 +71,16 @@ private class BarItem: TMBarItemable {
         self.tab = tab
     }
     
-    var title: String? {
+    private var _title: String {
         return tab.rawValue.capitalized
     }
-    var image: UIImage? {
-        return nil
+    var title: String? {
+        get {
+            return _title
+        } set {}
     }
+    var image: UIImage?
+    var badgeValue: String?
     
     func makeViewController() -> UIViewController? {
         let storyboard = UIStoryboard(name: "Messages", bundle: nil)

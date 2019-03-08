@@ -219,6 +219,17 @@ SWIFT_CLASS("_TtC6Tabman17GestureScrollView")
 
 @class UIColor;
 
+///
+SWIFT_CLASS("_TtC6Tabman11TMBadgeView")
+@interface TMBadgeView : UIView
+/// Tint which is used as background color.
+@property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+@end
+
+
 /// A view that displays a specified background style.
 SWIFT_CLASS("_TtC6Tabman19TMBarBackgroundView")
 @interface TMBarBackgroundView : UIView
@@ -322,6 +333,7 @@ SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 /// Color of the text when unselected / normal.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)layoutSubviews;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -372,11 +384,14 @@ SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 /// automatic insetting of child view controller contents.
 SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 @interface TabmanViewController : PageboyViewController
+@property (nonatomic) BOOL automaticallyAdjustsScrollViewInsets SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 @end
+
+
 
 
 
