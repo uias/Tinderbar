@@ -1,9 +1,9 @@
 {
-  "commitish" : "1.5.1",
+  "commitish" : "1.6.0",
   "iOS" : [
     {
       "name" : "AutoInsetter",
-      "hash" : "6b019955c88f065a3bf700913ca0d61e3bf800dfe57d28cae763b712faafd73e"
+      "hash" : "ee7e0b24a1dfae8c04738ae43c9dd457e23b58b102eda585f79a3761ec1fed7e"
     }
   ]
 }

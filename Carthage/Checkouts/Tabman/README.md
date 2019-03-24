@@ -103,7 +103,23 @@ extension TabViewController: PageboyViewControllerDataSource, TMBarDataSource {
 }
 ```
 
-*UIKit objects such as `UINavigationItem` and `UITabBarItem` also conform to `TMBarItemable`. However they don't support dynamic updating, such as setting `.title` after it has been provided to the data source.*
+### Bar Items
+A bar will ask for a `TMBarItemable` for each page that is provided to the `TabmanViewController` `dataSource`. `TMBarItemable` is a  protocol that can be used for custom item types, the default in Tabman being `TMBarItem`:
+
+```swift
+let item = TMBarItem()
+item.title = "Item 1"
+item.image = UIImage(named: "item.png")
+item.badgeValue = "New"
+```
+
+#### UIKit Itemables
+
+Tabman also provides support for some native `UIKit` types as `TMBarItemable`:
+- `UINavigationItem`
+- `UITabBarItem`
+
+*These types are unfortunately unable to support the dynamic updating of the bar when setting properties.*
 
 ### Choosing a look
 Tabman provides numerous, easy to use template styles out of the box:
@@ -150,6 +166,7 @@ bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right:
 - `contentMode` - How the layout should display its contents; either restricted to the bar width with `.fit` or intrinsically sized with `.intrinsic`.
 - `contentInset` - Inset to be applied to the edges of the layout.
 - `transitionStyle` - How the layout should perform transition animations.
+- `alignment` - How the layout should be aligned in the bar.
 
 **More: [**TMBarLayout Docs**](https://uias.github.io/Tabman/master/Layout.html)**
 

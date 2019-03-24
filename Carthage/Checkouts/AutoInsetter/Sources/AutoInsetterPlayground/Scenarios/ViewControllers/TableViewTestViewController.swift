@@ -18,6 +18,9 @@ class TableViewTestViewController: UIViewController, UITableViewDataSource, UITa
         tableView.dataSource = self
         tableView.delegate = self
         
+        view.backgroundColor = .white
+        tableView.backgroundColor = .clear
+        
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -44,6 +47,7 @@ class TableViewTestViewController: UIViewController, UITableViewDataSource, UITa
         }
         
         cell.textLabel?.text = "Row \(indexPath.row)"
+        cell.backgroundColor = .clear
         
         return cell
     }
