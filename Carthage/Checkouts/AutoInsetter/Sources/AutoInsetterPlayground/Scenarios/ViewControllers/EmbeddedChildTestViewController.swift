@@ -15,7 +15,11 @@ class EmbeddedChildTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if swift(>=4.2)
         addChild(child)
+        #else
+        addChildViewController(child)
+        #endif
         view.addSubview(child.view)
         child.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
