@@ -1,9 +1,9 @@
 {
-  "commitish" : "2.3.0",
+  "commitish" : "2.4.0",
   "iOS" : [
     {
       "name" : "Tabman",
-      "hash" : "8e4bf89189b6efa4b9b3832c0e4878f19bb8b5c29ed2654595fdd4c7552f21a7",
+      "hash" : "a7aae3e038c2232985acf01ce611072972449da5054a5620ea873822ef618082",
       "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
     }
   ]

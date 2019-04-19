@@ -38,6 +38,8 @@ class TinderBarButton: TMBarButton {
     override func layout(in view: UIView) {
         super.layout(in: view)
         
+        adjustsAlphaOnSelection = false
+        
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -57,6 +59,7 @@ class TinderBarButton: TMBarButton {
     }
     
     override func update(for selectionState: TMBarButton.SelectionState) {
+        super.update(for: selectionState)
         
         imageView.tintColor = unselectedTintColor.interpolate(with: tintColor,
                                                               percent: selectionState.rawValue)

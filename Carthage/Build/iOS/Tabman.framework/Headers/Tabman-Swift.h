@@ -335,6 +335,18 @@ SWIFT_CLASS("_TtC6Tabman17TMDotBarIndicator")
 
 
 
+/// Bar which can be hidden using animated transitions.
+/// Supports manual show/hide triggering and also automatic triggers
+/// such as time.
+SWIFT_CLASS("_TtC6Tabman11TMHidingBar")
+@interface TMHidingBar : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+
+
 /// <code>TMBarButton</code> that consists of a single label - that’s it!
 /// Probably the most commonly seen example of a bar button.
 SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
@@ -377,14 +389,18 @@ SWIFT_CLASS("_TtC6Tabman11TMSystemBar")
 
 
 
+@class UITraitCollection;
 
 /// <code>TMBarButton</code> which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.
 SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 @interface TMTabItemBarButton : TMBarButton
 /// Tint color of the button when unselected / normal.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 @class NSBundle;
 
@@ -419,6 +435,16 @@ SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 
 
 
+
+
+/// View which provides the necessary container utilities for setting a view
+/// as a <code>UINavigationItem.titleView</code>.
+SWIFT_CLASS("_TtC6Tabman22ViewTitleViewContainer")
+@interface ViewTitleViewContainer : UIView
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -757,6 +783,18 @@ SWIFT_CLASS("_TtC6Tabman17TMDotBarIndicator")
 
 
 
+/// Bar which can be hidden using animated transitions.
+/// Supports manual show/hide triggering and also automatic triggers
+/// such as time.
+SWIFT_CLASS("_TtC6Tabman11TMHidingBar")
+@interface TMHidingBar : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+
+
 /// <code>TMBarButton</code> that consists of a single label - that’s it!
 /// Probably the most commonly seen example of a bar button.
 SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
@@ -799,14 +837,18 @@ SWIFT_CLASS("_TtC6Tabman11TMSystemBar")
 
 
 
+@class UITraitCollection;
 
 /// <code>TMBarButton</code> which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.
 SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 @interface TMTabItemBarButton : TMBarButton
 /// Tint color of the button when unselected / normal.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 @class NSBundle;
 
@@ -841,6 +883,16 @@ SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 
 
 
+
+
+/// View which provides the necessary container utilities for setting a view
+/// as a <code>UINavigationItem.titleView</code>.
+SWIFT_CLASS("_TtC6Tabman22ViewTitleViewContainer")
+@interface ViewTitleViewContainer : UIView
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1183,6 +1235,18 @@ SWIFT_CLASS("_TtC6Tabman17TMDotBarIndicator")
 
 
 
+/// Bar which can be hidden using animated transitions.
+/// Supports manual show/hide triggering and also automatic triggers
+/// such as time.
+SWIFT_CLASS("_TtC6Tabman11TMHidingBar")
+@interface TMHidingBar : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+
+
 /// <code>TMBarButton</code> that consists of a single label - that’s it!
 /// Probably the most commonly seen example of a bar button.
 SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
@@ -1225,14 +1289,18 @@ SWIFT_CLASS("_TtC6Tabman11TMSystemBar")
 
 
 
+@class UITraitCollection;
 
 /// <code>TMBarButton</code> which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.
 SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 @interface TMTabItemBarButton : TMBarButton
 /// Tint color of the button when unselected / normal.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 @class NSBundle;
 
@@ -1267,6 +1335,16 @@ SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 
 
 
+
+
+/// View which provides the necessary container utilities for setting a view
+/// as a <code>UINavigationItem.titleView</code>.
+SWIFT_CLASS("_TtC6Tabman22ViewTitleViewContainer")
+@interface ViewTitleViewContainer : UIView
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
@@ -1605,6 +1683,18 @@ SWIFT_CLASS("_TtC6Tabman17TMDotBarIndicator")
 
 
 
+/// Bar which can be hidden using animated transitions.
+/// Supports manual show/hide triggering and also automatic triggers
+/// such as time.
+SWIFT_CLASS("_TtC6Tabman11TMHidingBar")
+@interface TMHidingBar : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+
+
 /// <code>TMBarButton</code> that consists of a single label - that’s it!
 /// Probably the most commonly seen example of a bar button.
 SWIFT_CLASS("_TtC6Tabman16TMLabelBarButton")
@@ -1647,14 +1737,18 @@ SWIFT_CLASS("_TtC6Tabman11TMSystemBar")
 
 
 
+@class UITraitCollection;
 
 /// <code>TMBarButton</code> which mimics appearance of a <code>UITabBarItem</code>, containing a image and label vertically aligned.
 SWIFT_CLASS("_TtC6Tabman18TMTabItemBarButton")
 @interface TMTabItemBarButton : TMBarButton
 /// Tint color of the button when unselected / normal.
 @property (nonatomic, strong) UIColor * _Null_unspecified tintColor;
+- (void)traitCollectionDidChange:(UITraitCollection * _Nullable)previousTraitCollection;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
 
 @class NSBundle;
 
@@ -1689,6 +1783,16 @@ SWIFT_CLASS("_TtC6Tabman20TabmanViewController")
 
 
 
+
+
+/// View which provides the necessary container utilities for setting a view
+/// as a <code>UINavigationItem.titleView</code>.
+SWIFT_CLASS("_TtC6Tabman22ViewTitleViewContainer")
+@interface ViewTitleViewContainer : UIView
+@property (nonatomic, readonly) CGSize intrinsicContentSize;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
 
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
