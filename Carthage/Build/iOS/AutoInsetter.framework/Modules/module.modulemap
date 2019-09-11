@@ -1,4 +1,0 @@
-framework module AutoInsetter {
-  header "AutoInsetter-Swift.h"
-  requires objc
-}

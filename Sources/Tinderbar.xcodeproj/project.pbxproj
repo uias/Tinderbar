@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,9 +21,6 @@
 		464264F4217E3FCD0001C4AF /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F2217E3FCD0001C4AF /* Root.storyboard */; };
 		464264F6217E3FCF0001C4AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 464264F5217E3FCF0001C4AF /* Assets.xcassets */; };
 		464264F9217E3FCF0001C4AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464264F7217E3FCF0001C4AF /* LaunchScreen.storyboard */; };
-		46426504217E40B00001C4AF /* Pageboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426501217E40B00001C4AF /* Pageboy.framework */; };
-		46426505217E40B00001C4AF /* AutoInsetter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426502217E40B00001C4AF /* AutoInsetter.framework */; };
-		46426506217E40B00001C4AF /* Tabman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46426503217E40B00001C4AF /* Tabman.framework */; };
 		46426509217E41E10001C4AF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46426508217E41E10001C4AF /* MessagesViewController.swift */; };
 		4642650E217E42270001C4AF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4642650D217E42270001C4AF /* ProfileViewController.swift */; };
 		46426510217E42A60001C4AF /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4642650F217E42A60001C4AF /* Profile.storyboard */; };
@@ -34,6 +31,7 @@
 		46D36A4F218614D40013635D /* MessagesMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D36A4E218614D40013635D /* MessagesMessageCell.xib */; };
 		46D36A51218617ED0013635D /* MessagesFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D36A50218617ED0013635D /* MessagesFeedCell.swift */; };
 		46D36A53218617F60013635D /* MessagesFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46D36A52218617F60013635D /* MessagesFeedCell.xib */; };
+		46F12DF823292C3B000EC76A /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 46F12DF723292C3B000EC76A /* Tabman */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,9 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46426504217E40B00001C4AF /* Pageboy.framework in Frameworks */,
-				46426505217E40B00001C4AF /* AutoInsetter.framework in Frameworks */,
-				46426506217E40B00001C4AF /* Tabman.framework in Frameworks */,
+				46F12DF823292C3B000EC76A /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,13 +227,15 @@
 				464264E7217E3FCD0001C4AF /* Sources */,
 				464264E8217E3FCD0001C4AF /* Frameworks */,
 				464264E9217E3FCD0001C4AF /* Resources */,
-				46426507217E40B70001C4AF /* Copy Carthage Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Tinderbar;
+			packageProductDependencies = (
+				46F12DF723292C3B000EC76A /* Tabman */,
+			);
 			productName = Tinderbar;
 			productReference = 464264EB217E3FCD0001C4AF /* Tinderbar.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +264,9 @@
 				Base,
 			);
 			mainGroup = 464264E2217E3FCD0001C4AF;
+			packageReferences = (
+				46F12DF623292C3B000EC76A /* XCRemoteSwiftPackageReference "Tabman" */,
+			);
 			productRefGroup = 464264EC217E3FCD0001C4AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,33 +293,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		46426507217E40B70001C4AF /* Copy Carthage Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/Pageboy.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/AutoInsetter.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Tabman.framework",
-			);
-			name = "Copy Carthage Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Pageboy.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AutoInsetter.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Tabman.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		464264E7217E3FCD0001C4AF /* Sources */ = {
@@ -417,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -472,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -487,7 +461,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS;
 				INFOPLIST_FILE = Tinderbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,7 +478,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = $SRCROOT/../Carthage/Build/iOS;
 				INFOPLIST_FILE = Tinderbar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +512,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		46F12DF623292C3B000EC76A /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		46F12DF723292C3B000EC76A /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46F12DF623292C3B000EC76A /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 464264E3217E3FCD0001C4AF /* Project object */;
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
+import UIKit
 import Tabman
 
 class TinderBarLayout: TMBarLayout {
