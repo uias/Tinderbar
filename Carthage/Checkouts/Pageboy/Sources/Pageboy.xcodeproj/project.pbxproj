@@ -32,6 +32,9 @@
 		464ADF5F20975E5000929AFB /* UIViewController+Pageboy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464ADF5E20975E5000929AFB /* UIViewController+Pageboy.swift */; };
 		464ADF6020975E5000929AFB /* UIViewController+Pageboy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464ADF5E20975E5000929AFB /* UIViewController+Pageboy.swift */; };
 		466A76B61FB38B32000B5C1C /* PageboyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D623B1D11E1D2DF200527F3D /* PageboyViewController.swift */; };
+		46A7329D22F81D8800FB2B6B /* IndexedObjectMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460906B8222A79F6005474BF /* IndexedObjectMap.swift */; };
+		46A7329E22F81D9000FB2B6B /* WeakContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460906B6222A785E005474BF /* WeakContainer.swift */; };
+		46A7329F22F81D9C00FB2B6B /* PageboyViewController+ScrollCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7BD7D21791E2D0041EFFC /* PageboyViewController+ScrollCalculations.swift */; };
 		46ADAAB6208F7E1500974529 /* PageboyAutoScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ADAAB4208F7E1500974529 /* PageboyAutoScroller.swift */; };
 		46ADAAB7208F7E1500974529 /* PageboyAutoScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ADAAB4208F7E1500974529 /* PageboyAutoScroller.swift */; };
 		46ADAAB8208F7E1500974529 /* PageboyViewController+AutoScrolling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ADAAB5208F7E1500974529 /* PageboyViewController+AutoScrolling.swift */; };
@@ -367,7 +370,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "UI At Six";
 				TargetAttributes = {
 					D623B1B61E1D0C6A00527F3D = {
@@ -532,6 +535,7 @@
 				466A76B61FB38B32000B5C1C /* PageboyViewController.swift in Sources */,
 				46ADAAC1208F7E8500974529 /* TransitionOperation+Action.swift in Sources */,
 				46ADAACD208F7EB200974529 /* PageboyViewController+ScrollDetection.swift in Sources */,
+				46A7329F22F81D9C00FB2B6B /* PageboyViewController+ScrollCalculations.swift in Sources */,
 				46ADAABF208F7E8500974529 /* PageboyViewController+Transitioning.swift in Sources */,
 				464ADF53209717EF00929AFB /* NavigationDirection.swift in Sources */,
 				46ADAACF208F7EB200974529 /* PageboyViewController+Management.swift in Sources */,
@@ -548,8 +552,10 @@
 				462D03E02091D3AB0033C710 /* UIView+Animation.swift in Sources */,
 				462A65E22000FCAA0051C79C /* UIApplication+SafeShared.swift in Sources */,
 				464ADF5D20975E3D00929AFB /* PageboyViewControllerDataSource.swift in Sources */,
+				46A7329D22F81D8800FB2B6B /* IndexedObjectMap.swift in Sources */,
 				462A65DE2000FCAA0051C79C /* UIView+Localization.swift in Sources */,
 				464ADF5B20975E3D00929AFB /* PageboyViewControllerDelegate.swift in Sources */,
+				46A7329E22F81D9000FB2B6B /* WeakContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +622,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 3.3.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -674,6 +681,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MARKETING_VERSION = 3.3.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -696,6 +704,7 @@
 				INFOPLIST_FILE = Pageboy/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 3.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Pageboy;
 				PRODUCT_NAME = Pageboy;
 				SKIP_INSTALL = YES;
@@ -714,6 +723,7 @@
 				INFOPLIST_FILE = Pageboy/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 3.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.uias.Pageboy;
 				PRODUCT_NAME = Pageboy;
 				SKIP_INSTALL = YES;

@@ -160,6 +160,13 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         }
     }
     
+    func layout(needsReload layout: TMBarLayout) {
+        guard let items = self.items else {
+            return
+        }
+        reloadData(at: 0 ... items.count, context: .full)
+    }
+    
     // MARK: Init
     
     public required init() {
@@ -169,7 +176,7 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         buttons.interactionHandler = self
         scrollHandler.delegate = self
         scrollView.gestureDelegate = self
-        if #available(iOSApplicationExtension 10.0, *) {
+        if #available(iOS 10.0, *) {
             #if swift(>=4.2)
             accessibilityTraits = [.tabBar]
             #else
@@ -248,8 +255,8 @@ open class TMBarView<Layout: TMBarLayout, Button: TMBarButton, Indicator: TMBarI
         rootContentStack.translatesAutoresizingMaskIntoConstraints = false
         if #available(iOS 11, *) {
             constraints.append(contentsOf: [
-                rootContentStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-                rootContentStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+                rootContentStack.leadingAnchor.constraint(equalTo: view.safeAreaLeadingAnchor),
+                rootContentStack.trailingAnchor.constraint(equalTo: view.safeAreaTrailingAnchor)
                 ])
         } else {
             constraints.append(contentsOf: [
@@ -368,6 +375,7 @@ extension TMBarView: TMBar {
                 buttonsToRemove.append(button)
                 items.remove(at: index)
             }
+            buttons.all.removeAll(where: { buttonsToRemove.contains($0) })
             layout.remove(buttons: buttonsToRemove)
         }
         

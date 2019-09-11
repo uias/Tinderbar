@@ -1,10 +1,10 @@
 {
-  "commitish" : "1.7.0",
+  "commitish" : "1.8.0",
   "iOS" : [
     {
       "name" : "AutoInsetter",
-      "hash" : "336b44fe3de2bcb57ca1dc88edfb643801f95091f36ae2c69f9618021d14167b",
-      "swiftToolchainVersion" : "5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
+      "hash" : "c616bcb31cba788e6a8237304a78ae9b9b5919e16c007d68e6db7dec58c90b6b",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)"
     }
   ]
 }

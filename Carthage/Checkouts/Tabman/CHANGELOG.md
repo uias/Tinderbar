@@ -3,7 +3,9 @@ All notable changes to this project will be documented in this file.
 `Tabman` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 2.x Releases
-- `2.4.x` Releases - [2.4.0](#240)
+- `2.6.x` Releases - [2.6.0](#260)
+- `2.5.x` Releases - [2.5.0](#250)
+- `2.4.x` Releases - [2.4.0](#240) | [2.4.1](#241) | [2.4.2](#242) | [2.4.3](#243)
 - `2.3.x` Releases - [2.3.0](#230)
 - `2.2.x` Releases - [2.2.0](#220) | [2.2.1](#221)
 - `2.1.x` Releases - [2.1.0](#210) | [2.1.1](#211) | [2.1.2](#212) | [2.1.3](#213) | [2.1.4](#214)
@@ -30,6 +32,50 @@ All notable changes to this project will be documented in this file.
 - `0.4.x` Releases - [0.4.0](#040) | [0.4.1](#041) | [0.4.2](#042) | [0.4.3](#043) | [0.4.4](#044) | [0.4.5](#045) | [0.4.6](#046) | [0.4.7](#047) | [0.4.8](#048)
 
 ---
+## [2.6.0](https://github.com/uias/Tabman/releases/tag/2.6.0)
+Released on 2019-09-11
+
+#### Added
+- Support for Swift Package Manager in Xcode 11.
+- Support for Dark Mode in iOS 13.
+- `contentInset` to `TMBadgeView` allowing for custom badge content insets.
+
+#### Fixed
+- Issue where accessing `safeAreaLayoutGuide` could cause a crash on Jailbroken devices.
+     - by [nghiaphunguyen](https://github.com/nghiaphunguyen).
+- Issue where constraints in `TMTabItemBarButton` would not correctly be applied on iOS 13.
+     - by [forceunwrap](https://github.com/forceunwrap).
+- Issue where a `TMSystemBar` could fail to correctly extend background edges into system areas.
+
+---
+## [2.5.0](https://github.com/uias/Tabman/releases/tag/2.5.0)
+Released on 2019-08-03
+
+#### Added
+- Support for vertical separators between bar buttons to `TMHorizontalBarLayout` via `showSeparators`.
+- `separatorColor` to `TMHorizontalBarLayout`.
+- `separatorInset` to `TMHorizontalBarLayout`.
+- `separatorWidth` to `TMHorizontalBarLayout`.
+
+---
+## [2.4.3](https://github.com/uias/Tabman/releases/tag/2.4.3)
+Released on 2019-07-13
+
+#### Updated
+- Add support for multiple Swift versions to Podspec.
+
+## [2.4.2](https://github.com/uias/Tabman/releases/tag/2.4.2)
+Released on 2019-04-25
+
+#### Fixed
+- Incorrect Swift version in podspec, now `4.0`.
+
+## [2.4.1](https://github.com/uias/Tabman/releases/tag/2.4.1)
+Released on 2019-04-20
+
+#### Fixed
+- Build issues with iOS 9.
+
 ## [2.4.0](https://github.com/uias/Tabman/releases/tag/2.4.0)
 Released on 2019-04-19
 

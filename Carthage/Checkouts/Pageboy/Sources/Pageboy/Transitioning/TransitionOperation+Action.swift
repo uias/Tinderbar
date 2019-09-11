@@ -6,7 +6,7 @@
 //  Copyright © 2018 UI At Six. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 internal extension TransitionOperation {
     
@@ -52,6 +52,9 @@ internal extension TransitionOperation.Action {
             default:
                 return .fromTop
             }
+            
+        @unknown default:
+            fatalError("unsupported orientation \(orientation.rawValue)")
         }
     }
     #else
