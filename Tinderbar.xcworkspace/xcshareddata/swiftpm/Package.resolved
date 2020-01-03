@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "AutoInsetter",
-        "repositoryURL": "https://github.com/uias/AutoInsetter",
-        "state": {
-          "branch": null,
-          "revision": "c35bef3510f8c3cdb340cd19315f3063e6eb7986",
-          "version": "1.8.0"
-        }
-      },
-      {
         "package": "Pageboy",
         "repositoryURL": "https://github.com/uias/Pageboy",
         "state": {
@@ -24,8 +15,8 @@
         "repositoryURL": "https://github.com/uias/Tabman",
         "state": {
           "branch": null,
-          "revision": "ee9d83070b47fee5d0b62b0d7a9d7f240d56cebc",
-          "version": "2.6.3"
+          "revision": "9137abcd1945b0783ada97be01fba2ff3294947c",
+          "version": "2.7.0"
         }
       }
     ]
