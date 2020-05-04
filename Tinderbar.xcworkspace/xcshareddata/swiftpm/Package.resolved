@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/uias/Pageboy",
         "state": {
           "branch": null,
-          "revision": "af6e3d48cd60bd9ee6ca5cef8dd000727cce4ab8",
-          "version": "3.5.1"
+          "revision": "c0b276d7f3d5ccb4db736fa23b055b0ddec29982",
+          "version": "3.6.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/uias/Tabman",
         "state": {
           "branch": null,
-          "revision": "0bb5cc153b075832f0912df0c08d27e173d3b458",
-          "version": "2.8.2"
+          "revision": "57faefffc385a3a12f39ea02c5680c02a2203a50",
+          "version": "2.9.0"
         }
       }
     ]
