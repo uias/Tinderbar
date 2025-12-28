@@ -9,8 +9,9 @@
 import UIKit
 import Tabman
 
-class MessagesBar {
-    
+@MainActor
+final class MessagesBar {
+
     typealias BarType = TMBarView<TMHorizontalBarLayout, TMLabelBarButton, TMBarIndicator.None>
     
     static func make() -> BarType {

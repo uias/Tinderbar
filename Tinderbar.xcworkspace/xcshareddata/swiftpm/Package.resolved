@@ -1,12 +1,13 @@
 {
+  "originHash" : "c4a894b74d300266a17bab2098158f86c86b8a82416cd93146b829e9f2e13d04",
   "pins" : [
     {
       "identity" : "pageboy",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Pageboy",
       "state" : {
-        "revision" : "5522aa6ae88633f6c23cf504e9cd684e963822f1",
-        "version" : "4.0.2"
+        "revision" : "d522ccd03a87db72bf9b2df52808522134139001",
+        "version" : "5.0.1"
       }
     },
     {
@@ -14,10 +15,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/uias/Tabman",
       "state" : {
-        "revision" : "e32c0d821b03566ed966753f941113883f268da0",
-        "version" : "3.0.2"
+        "revision" : "567ea7c35419fd6c1eb439c078e7407edfdc8214",
+        "version" : "4.0.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

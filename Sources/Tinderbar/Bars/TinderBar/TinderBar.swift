@@ -8,8 +8,9 @@
 
 import Tabman
 
-class TinderBar {
-    
+@MainActor
+final class TinderBar {
+
     typealias BarType = TMBarView<TinderBarLayout, TinderBarButton, TMBarIndicator.None>
     
     static func make() -> TMBar {
