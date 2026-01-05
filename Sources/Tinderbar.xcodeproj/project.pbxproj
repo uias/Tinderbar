@@ -521,7 +521,7 @@
 			repositoryURL = "https://github.com/uias/Tabman";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 3.0.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
