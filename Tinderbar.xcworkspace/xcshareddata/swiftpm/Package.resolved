@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Pageboy",
-        "repositoryURL": "https://github.com/uias/Pageboy",
-        "state": {
-          "branch": null,
-          "revision": "fcaaab06e634de68d2929883083683ec8cf5dade",
-          "version": "3.6.1"
-        }
-      },
-      {
-        "package": "Tabman",
-        "repositoryURL": "https://github.com/uias/Tabman",
-        "state": {
-          "branch": null,
-          "revision": "bce2c87659c0ed868e6ef0aa1e05a330e202533f",
-          "version": "2.11.0"
-        }
+  "pins" : [
+    {
+      "identity" : "pageboy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Pageboy",
+      "state" : {
+        "revision" : "7087f77ecf55a5ec1d73c6b5fc0f6fb09304cc35",
+        "version" : "4.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "tabman",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Tabman",
+      "state" : {
+        "revision" : "8037efbf32684b2213e8c56462ba0f2b481b90e6",
+        "version" : "3.0.0"
+      }
+    }
+  ],
+  "version" : 2
 }

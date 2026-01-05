@@ -78,7 +78,7 @@ private class BarItem: TMBarItemable {
             return _image
         } set {}
     }
-    
+    var selectedImage: UIImage?
     var badgeValue: String?
     
     func makeViewController() -> UIViewController? {

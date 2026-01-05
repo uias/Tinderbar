@@ -7,7 +7,7 @@
 Tinderbar is a recreation of the Tinder iOS app's navigation hierarchy using [Tabman](https://github.com/uias/Tabman), a  showcase of creating custom Tabman components.
 
 ### Requirements
-To run the project, you need Xcode 11 as TinderBar uses Tabman via Swift PM.
+Latest version of Xcode.
 
 ## 🚀 Components
 Tinderbar uses Tabman for its primary navigation bar and also sub navigation within the Messages section.
